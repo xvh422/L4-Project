@@ -22,18 +22,9 @@ labelfont=bf]{caption}                      % Defines caption font size and capt
 \renewcommand\Dated@name{}
 \makeatother
 
-\usepackage{fancyhdr}
-
-
-\pagestyle{fancy}                           % Insert header
-\renewcommand{\headrulewidth}{0pt}
-\lhead{\small Firstname Surname}                          % Your name
-\rhead{\small Example Project Report Title}            % Your report title               
-
 \def\thesection{\arabic{section}}
 
 \def\bibsection{\section*{References}}        % Position reference section correctly
-
 
 %%%%% Document %%%%%
 \begin{document}                     
@@ -41,8 +32,8 @@ labelfont=bf]{caption}                      % Defines caption font size and capt
 
 \title{Example Project Report} 
 \date{Submitted: \today{}}
-\author{Firstname Surname}
-\affiliation{\normalfont Level 4 Project, MPhys Theoretical Physics\\ Supervisor: Professor X. Surname\\ Department of Physics, Durham University}
+\author{Joseph Carter}
+\affiliation{\normalfont Level 4 Project, MPhys Physics with Astronomy\\ Supervisor: Professor T. Theuns\\ Department of Physics, Durham University}
 
 \begin{abstract}              
  
@@ -60,32 +51,33 @@ Abstract abstract abstract abstract abstract abstract abstract abstract abstract
 
 \newpage
 
-\section{Introduction} 
+\section{Introduction}
 
 %%% example text follows %%%
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia diam id odio consequat, vel cursus lectus aliquam. Quisque quis neque massa. Phasellus ut mi nulla. Morbi egestas urna mauris, sit amet accumsan nibh accumsan id. Etiam quis urna at felis imperdiet euismod non eget ligula. Vivamus sit amet ultricies massa. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia diam id odio consequat, vel cursus lectus aliquam. Quisque quis neque massa. Phasellus ut mi nulla. Morbi egestas urna mauris, sit amet accumsan nibh accumsan id. Etiam quis urna at felis imperdiet euismod non eget ligula. Vivamus sit amet ultricies massa.
 
-\section{Section heading} 
+\section{Section heading}
 
-Duis eget tellus tortor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In tellus nulla, sodales eu pulvinar at, accumsan quis magna. Nunc sed lacus diam. Nam enim mauris, imperdiet ut egestas quis, tincidunt at odio. Ut viverra nulla at libero dictum aliquet. Suspendisse lacus lacus, imperdiet nec elit nec, ullamcorper facilisis ex. 
+Duis eget tellus tortor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In tellus nulla, sodales eu pulvinar at, accumsan quis magna. Nunc sed lacus diam. Nam enim mauris, imperdiet ut egestas quis, tincidunt at odio. Ut viverra nulla at libero dictum aliquet. Suspendisse lacus lacus, imperdiet nec elit nec, ullamcorper facilisis ex.
 
-\subsection{Subsection heading} 
+\subsection{Subsection heading}
 
 Proin sit amet mauris tincidunt, consectetur nisi ultrices, dapibus elit. Nullam vitae faucibus odio, pharetra ultrices tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
 
 \section{Conclusions}
- 
 Donec finibus, tellus sit amet luctus sodales, lectus ante accumsan ligula, at condimentum lorem justo a sapien. Phasellus vel tortor vitae metus lacinia efficitur ac vel ex. Aenean eget congue leo. Aliquam cursus mauris sit amet arcu dignissim, vel condimentum nisi sodales. 
 
 \begin{acknowledgments}
+
 (OPTIONAL) The author would like to thank...
+
 \end{acknowledgments}
 
 \begin{thebibliography}{}
 
-\bibitem{ref01} A.~N.~Other, Title of the book, edition, publishers, place of publication (year of publication), p.~123.   % example book reference 
+bibitem{ref01} A.~N.~Other, Title of the book, edition, publishers, place of publication (year of publication), p.~123.   % example book reference 
 
-\bibitem{ref02} A.~N.~Other, Title of the article, journal title, volume, 123--456 (year of publication).   % example journal reference 
+bibitem{ref02} A.~N.~Other, Title of the article, journal title, volume, 123--456 (year of publication).   % example journal reference 
 
  You might prefer to use a different referencing style such as one where the references appear as "Smith et al. (1999)" with an alphabetical list at the end.
 
