@@ -13,7 +13,8 @@
 labelfont=bf]{caption}                      % Defines caption font size and caption title bolded
 
 \usepackage{graphics,graphicx,epsfig,ulem}	% Makes sure all graphics works
-\usepackage{amsmath} 						% Adds mathematical features for equations
+\usepackage{amsmath}                        % Adds mathematical features for equations
+\usepackage{float}
 
 \usepackage{etoolbox}                       % Customise date to preferred format
 \makeatletter
@@ -55,6 +56,35 @@ Abstract abstract abstract abstract abstract abstract abstract abstract abstract
 
 %%% example text follows %%%
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia diam id odio consequat, vel cursus lectus aliquam. Quisque quis neque massa. Phasellus ut mi nulla. Morbi egestas urna mauris, sit amet accumsan nibh accumsan id. Etiam quis urna at felis imperdiet euismod non eget ligula. Vivamus sit amet ultricies massa.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=9cm]{Plot_1.jpeg}
+\caption{Needs changing}
+\label{fig:1}
+\end{figure}
+
+\newpage
+
+Random Latin text.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{Plot_2.jpeg}
+\caption{Plots of stellar mass, halo mass and black hole mass of two galaxies, one from the red sequence and one from the blue cloud, over cosmic time. The colour of the points shows sSFR compared to the mean sSFR for central galaxies at that redshift. Ordered from low to high sSFR, the colours are: (cyan, blue, green, red, black).}
+\label{fig:2}
+\end{figure}
+
+\newpage
+
+Random Latin text.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=17cm]{Plot_3.jpeg}
+\caption{Left: Black hole mass - halo mass relation for central galaxies at z=0, the blue line shows median black hole mass. Right: Median black hole mass as a function of halo mass for central galaxies at z=0, z=1, z=2 and z=4. Dashed lines show power law fits, the dotted line shows an exponential fit.}
+\label{fig:3}
+\end{figure}
 
 \section{Section heading}
 
