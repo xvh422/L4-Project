@@ -2,7 +2,9 @@
 
 \documentclass[12pt, twocolumn]{revtex4}    % Font size (12pt) and column number (one or two).
 
-\usepackage{times}                          % Times New Roman font type
+\usepackage{times}  % Times New Roman font type
+
+\usepackage{natbib}
 
 \usepackage[a4paper, left=2.5cm, right=2.5cm,
  top=2.5cm, bottom=2.5cm]{geometry}       % Defines paper size and margin length
@@ -60,6 +62,10 @@ Abstract abstract abstract abstract abstract abstract abstract abstract abstract
 %%% example text follows %%%
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia diam id odio consequat, vel cursus lectus aliquam. Quisque quis neque massa. Phasellus ut mi nulla. Morbi egestas urna mauris, sit amet accumsan nibh accumsan id. Etiam quis urna at felis imperdiet euismod non eget ligula. Vivamus sit amet ultricies massa.
 
+\section{Images}
+
+Random Latin text.
+
 \onecolumngrid
 
 
@@ -98,7 +104,7 @@ Random Latin text.
 \begin{figure}[H]
 \centering
 \includegraphics[width=17cm]{Plot_3.jpeg}
-\caption{Left: Black hole mass - halo mass relation for central galaxies at z=0, the blue line shows median black hole mass. Right: Median black hole mass as a function of halo mass for central galaxies at z=0, z=1, z=2 and z=4. Dashed lines show power law fits, the dotted line shows an exponential fit.}
+\caption{Left: Black hole mass - halo mass relation for central galaxies at z=0, the blue line shows median black hole mass. Right: Median black hole mass as a function of halo mass for central galaxies at snapnums 28, 19, 15, and 10 (equivalent to z = 0, 1, 2, and 4 respectively). Dashed lines show power law fits, the dotted line shows an exponential fit.}
 \label{fig:3}
 \end{figure}
 \twocolumngrid
@@ -111,8 +117,8 @@ Random Latin text.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\linewidth]{Mass_Function.jpeg}
-\caption{Galaxy halo mass functions for galaxies of halo mass greater than $10^{12}M_\odot$ between z=0 and z=4. The filled lines show mass functions from EAGLE, dashed lines show mass functions from [Colossus].}
+\includegraphics[width=11cm]{Plot_4.jpeg}
+\caption{Black hole mass (top), Halo mass (middle), and sSFR (bottom) as a function of cosmic time relative to $\tau_{BH}$, where $\tau_{BH}$ is the time at which the black hole mass increases above $10^8M_\odot$.}
 \label{fig:4}
 \end{figure}
 \twocolumngrid
@@ -125,16 +131,56 @@ Random Latin text.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\linewidth]{Mass_Function_2.jpeg}
-\caption{Galaxy halo mass function as a function of redshift for galaxies of halo mass greater than $10^{11}M_\odot$.}
+\includegraphics[width=\linewidth]{Mass_Function.jpeg}
+\caption{Galaxy halo mass functions for galaxies of halo mass greater than $10^{12}M_\odot$ between z=0 and z=4. The dashed lines show mass functions from EAGLE, filled lines show mass functions from Colossus \cite{Colossus}.}
 \label{fig:5}
+\end{figure}
+\twocolumngrid
+
+
+Random Latin text.
+
+\onecolumngrid
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{Mass_Function_2.jpeg}
+\caption{Galaxy halo mass function as a function of redshift for galaxies of halo mass greater than $10^{12}M_\odot$. Produced using Colossus \cite{Colossus}.}
+\label{fig:6}
+\end{figure}
+\twocolumngrid
+
+
+Random Latin text.
+
+\onecolumngrid
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{Plot_5.jpeg}
+\caption{$M_H/M_{H0}$ as a function of redshift for central galaxies which cross the $10^{12}M_\odot$ halo mass threshold at z=2. The red line shows $M_H/M_{H0}$ as described by equation (?).}
+\label{fig:7}
+\end{figure}
+\twocolumngrid
+
+
+\onecolumngrid
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{Plot_6.jpeg}
+\caption{Top: Galaxy halo mass function as a function of redshift for galaxies of mass $10^{12}M_\odot$. Bottom: Formation rate of halos of mass greater than $10^{12}M_\odot$ as a function of redshift. This appears to peak at z=2.}
+\label{fig:8}
 \end{figure}
 \twocolumngrid
 
 
 \section{Section heading}
 
-Duis eget tellus tortor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In tellus nulla, sodales eu pulvinar at, accumsan quis magna. Nunc sed lacus diam. Nam enim mauris, imperdiet ut egestas quis, tincidunt at odio. Ut viverra nulla at libero dictum aliquet. Suspendisse lacus lacus, imperdiet nec elit nec, ullamcorper facilisis ex.
+Duis eget tellus tortor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In tellus nulla, sodales eu pulvinar at, accumsan quis magna. Nunc sed lacus diam. Nam enim mauris, imperdiet ut egestas quis, tincidunt at odio. Ut viverra nulla at libero dictum aliquet. Suspendisse lacus lacus, imperdiet nec elit nec, ullamcorper facilisis ex. \cite{Ikea} \cite{EAGLE}
 
 \subsection{Subsection heading}
 
@@ -143,20 +189,7 @@ Proin sit amet mauris tincidunt, consectetur nisi ultrices, dapibus elit. Nullam
 \section{Conclusions}
 Donec finibus, tellus sit amet luctus sodales, lectus ante accumsan ligula, at condimentum lorem justo a sapien. Phasellus vel tortor vitae metus lacinia efficitur ac vel ex. Aenean eget congue leo. Aliquam cursus mauris sit amet arcu dignissim, vel condimentum nisi sodales. 
 
-\begin{acknowledgments}
-
-(OPTIONAL) The author would like to thank...
-
-\end{acknowledgments}
-
-\begin{thebibliography}{}
-
-bibitem{ref01} A.~N.~Other, Title of the book, edition, publishers, place of publication (year of publication), p.~123.   % example book reference 
-
-bibitem{ref02} A.~N.~Other, Title of the article, journal title, volume, 123--456 (year of publication).   % example journal reference 
-
- You might prefer to use a different referencing style such as one where the references appear as "Smith et al. (1999)" with an alphabetical list at the end.
-
-\end{thebibliography} 
+\bibliographystyle{unsrtnat}
+\bibliography{citation.bib}
 
 \end{document}
