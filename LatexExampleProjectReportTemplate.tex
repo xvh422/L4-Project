@@ -1,6 +1,6 @@
 %%%%% Document Setup %%%%%%%%
 
-\documentclass[12pt, onecolumn]{revtex4}    % Font size (12pt) and column number (one or two).
+\documentclass[12pt, twocolumn]{revtex4}    % Font size (12pt) and column number (one or two).
 
 \usepackage{times}                          % Times New Roman font type
 
@@ -45,28 +45,39 @@ Abstract abstract abstract abstract abstract abstract abstract abstract abstract
 
 \maketitle
 %\thispagestyle{plain} % produces page number for front page
+\onecolumngrid
+
 
 \tableofcontents
-\let\toc@pre\relax
-\let\toc@post\relax
-
 \newpage
+\twocolumngrid
+%%\let\toc@pre\relax
+%%\let\toc@post\relax
+
 
 \section{Introduction}
 
 %%% example text follows %%%
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia diam id odio consequat, vel cursus lectus aliquam. Quisque quis neque massa. Phasellus ut mi nulla. Morbi egestas urna mauris, sit amet accumsan nibh accumsan id. Etiam quis urna at felis imperdiet euismod non eget ligula. Vivamus sit amet ultricies massa.
 
+\onecolumngrid
+
+
 \begin{figure}[H]
 \centering
-\includegraphics[width=9cm]{Plot_1.jpeg}
+\includegraphics[width=11cm]{Plot_1.jpeg}
 \caption{Top: u-r magnitude as a function of stellar mass for galaxies of mass greater than $10^9M_\odot$. Individual galaxies are plotted as points, coloured by sSFR, using the colourbar to the right. Middle: Histogram of sSFR for galaxies of stellar mass between $10^{10} - 10^{10.5}M_\odot$ (the shaded region on the above plot). Bottom: Histogram of $M_{BH}/M_*$ for galaxies of stellar mass between $10^{10} - 10^{10.5}M_\odot$.}
 \label{fig:1}
 \end{figure}
+\twocolumngrid
+
 
 \newpage
 
 Random Latin text.
+
+\onecolumngrid
+
 
 \begin{figure}[H]
 \centering
@@ -74,10 +85,15 @@ Random Latin text.
 \caption{Plots of stellar mass, halo mass and black hole mass of two galaxies, one from the red sequence and one from the blue cloud, over cosmic time. The colour of the points show sSFR compared to the mean sSFR for central galaxies at that redshift. Colours from low to high sSFR: (cyan, blue, green, red, black).}
 \label{fig:2}
 \end{figure}
+\twocolumngrid
+
 
 \newpage
 
 Random Latin text.
+
+\onecolumngrid
+
 
 \begin{figure}[H]
 \centering
@@ -85,8 +101,13 @@ Random Latin text.
 \caption{Left: Black hole mass - halo mass relation for central galaxies at z=0, the blue line shows median black hole mass. Right: Median black hole mass as a function of halo mass for central galaxies at z=0, z=1, z=2 and z=4. Dashed lines show power law fits, the dotted line shows an exponential fit.}
 \label{fig:3}
 \end{figure}
+\twocolumngrid
+
 
 Random Latin text.
+
+\onecolumngrid
+
 
 \begin{figure}[H]
 \centering
@@ -94,8 +115,13 @@ Random Latin text.
 \caption{Galaxy halo mass functions for galaxies of halo mass greater than $10^{12}M_\odot$ between z=0 and z=4. The filled lines show mass functions from EAGLE, dashed lines show mass functions from [Colossus].}
 \label{fig:4}
 \end{figure}
+\twocolumngrid
+
 
 Random Latin text.
+
+\onecolumngrid
+
 
 \begin{figure}[H]
 \centering
@@ -103,6 +129,8 @@ Random Latin text.
 \caption{Galaxy halo mass function as a function of redshift for galaxies of halo mass greater than $10^{11}M_\odot$.}
 \label{fig:5}
 \end{figure}
+\twocolumngrid
+
 
 \section{Section heading}
 
@@ -130,6 +158,5 @@ bibitem{ref02} A.~N.~Other, Title of the article, journal title, volume, 123--45
  You might prefer to use a different referencing style such as one where the references appear as "Smith et al. (1999)" with an alphabetical list at the end.
 
 \end{thebibliography} 
-
 
 \end{document}
