@@ -38,11 +38,11 @@ labelfont=bf]{caption}                      % Defines caption font size and capt
 \author{Joseph Carter}
 \affiliation{\normalfont Level 4 Project, MPhys Physics with Astronomy\\ Supervisor: Professor T. Theuns\\ Department of Physics, Durham University}
 
-\begin{abstract}              
+%\begin{abstract}              
  
-Abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract 
+%Abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract %abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract %abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract %abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract 
 
-\end{abstract}
+%\end{abstract}
 
 
 \maketitle
@@ -53,14 +53,26 @@ Abstract abstract abstract abstract abstract abstract abstract abstract abstract
 \tableofcontents
 \newpage
 \twocolumngrid
-%%\let\toc@pre\relax
-%%\let\toc@post\relax
+%\let\toc@pre\relax
+%\let\toc@post\relax
 
 
 \section{Introduction}
 
-%%% example text follows %%%
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia diam id odio consequat, vel cursus lectus aliquam. Quisque quis neque massa. Phasellus ut mi nulla. Morbi egestas urna mauris, sit amet accumsan nibh accumsan id. Etiam quis urna at felis imperdiet euismod non eget ligula. Vivamus sit amet ultricies massa.
+A quasar is an extremely luminous active galactic nucleus, typically associated with a supermassive black hole (SMBH) at the center of a galaxy. The intense radiation emitted by a quasar is thought to be caused by gas falling into the black hole (BH), with luminosities ranging between $~10^{11} - 10^{15}L_\odot$. The evolution of these galaxies' dark matter halos is well understood, but how this relates to the formation and evolution of quasars is not as well understood.\par
+The aim of this project is to develop a model for the formation and evolution of quasars using a model for galaxy formation which includes feedback from stars and accreting black holes. This paper describes how the relation between the growth of SMBHs and the growth of their host galaxies can be used to determine the rate at which quasars are formed in the universe.
+
+\subsection{The EAGLE Simulations}
+
+Unless stated otherwise, all of the plots in this paper were produced using data from the Virgo Consortium’s “Evolution and Assembly of GaLaxies and their Environments” simulation suite (EAGLE) \cite{EAGLE}. This is a set of cosmological hydrodynamical simulations which use a modified version of the GADGET smoothed particle hydrodynamics code \cite{GADGET}. All plots were produced using the Ref-L0100N1504 simulation. This simulation includes feedback from stars and AGN, so it is useful for paramaters such as the formation rate of quasars to be based on data from this simulation. Full details of the parameters used in the simulations can be found in the EAGLE paper.
+
+\subsection{COLOSSUS}
+
+Some plots in this paper were also produced using COLOSSUS \cite{COLOSSUS}. This is a python package for calculations related to cosmology, the large-scale structure of matter in the universe, and the properties of dark matter halos. In particular, it is used in this paper to produce galaxy halo mass functions. It is shown in fig.? that the mass functions produced by COLOSSUS are a good fit for mass functions produced using data from EAGLE.
+
+\section{The Black Hole Mass - Halo Mass Relation}
+
+
 
 \section{Images}
 
@@ -72,7 +84,7 @@ Random Latin text.
 \begin{figure}[H]
 \centering
 \includegraphics[width=11cm]{Plot_1.jpeg}
-\caption{Top: u-r magnitude as a function of stellar mass for galaxies of mass greater than $10^9M_\odot$. Individual galaxies are plotted as points, coloured by sSFR, using the colourbar to the right. Middle: Histogram of sSFR for galaxies of stellar mass between $10^{10} - 10^{10.5}M_\odot$ (the shaded region on the above plot). Bottom: Histogram of $M_{BH}/M_*$ for galaxies of stellar mass between $10^{10} - 10^{10.5}M_\odot$.}
+\caption{Top: u-r magnitude as a function of stellar mass for galaxies of mass greater than $10^9M_\odot$ at z=0. Individual galaxies are plotted as points, coloured by sSFR, using the colourbar to the right. Middle: Histogram of sSFR for galaxies of stellar mass between $10^{10} - 10^{10.5}M_\odot$ (the shaded region on the above plot). Bottom: Histogram of $M_{BH}/M_*$ for galaxies of stellar mass between $10^{10} - 10^{10.5}M_\odot$.}
 \label{fig:1}
 \end{figure}
 \twocolumngrid
@@ -132,7 +144,7 @@ Random Latin text.
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{Mass_Function.jpeg}
-\caption{Galaxy halo mass functions for galaxies of halo mass greater than $10^{12}M_\odot$ between z=0 and z=4. The dashed lines show mass functions from EAGLE, filled lines show mass functions from Colossus \cite{Colossus}.}
+\caption{Galaxy halo mass functions for galaxies of halo mass greater than $10^{12}M_\odot$ between z=0 and z=4. The dashed lines show mass functions from EAGLE, filled lines show mass functions from COLOSSUS.}
 \label{fig:5}
 \end{figure}
 \twocolumngrid
@@ -146,7 +158,7 @@ Random Latin text.
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{Mass_Function_2.jpeg}
-\caption{Galaxy halo mass function as a function of redshift for galaxies of halo mass greater than $10^{12}M_\odot$. Produced using Colossus \cite{Colossus}.}
+\caption{Galaxy halo mass function as a function of redshift for galaxies of halo mass greater than $10^{12}M_\odot$. Produced using COLOSSUS.}
 \label{fig:6}
 \end{figure}
 \twocolumngrid
@@ -172,7 +184,7 @@ Random Latin text.
 \begin{figure}[H]
 \centering
 \includegraphics[width=12cm]{Plot_6.jpeg}
-\caption{Top: Galaxy halo mass function as a function of redshift for galaxies of mass $10^{12}M_\odot$. Bottom: Formation rate of halos of mass greater than $10^{12}M_\odot$ as a function of redshift. This appears to peak at z=2.}
+\caption{Top: Galaxy halo mass function as a function of redshift for galaxies of mass $10^{12}M_\odot$ produced using COLOSSUS. Bottom: Formation rate of halos of mass greater than $10^{12}M_\odot$ as a function of redshift, calculated using equation (?). This appears to peak at z=2.}
 \label{fig:8}
 \end{figure}
 \twocolumngrid
