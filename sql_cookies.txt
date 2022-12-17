@@ -1,2 +1,2 @@
 #LWP-Cookies-2.0
-Set-Cookie3: JSESSIONID=56BA066118A0F52405CC63F1EC8749AB; path="/Eagle"; domain="galaxy-catalogue.dur.ac.uk"; path_spec; discard; HttpOnly=None; version=0
+Set-Cookie3: JSESSIONID=FAD114432082B406807CAF43C289E239; path="/Eagle"; domain="galaxy-catalogue.dur.ac.uk"; path_spec; discard; HttpOnly=None; version=0
