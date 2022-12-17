@@ -101,11 +101,34 @@ The difference in star formation rate between the blue cloud and the red sequenc
     \Delta_z\equiv(\Omega_m(1+z)^3+\Omega_\Lambda)^{\frac{1}{3}}
 \end{equation}
 
-\noindent outflows driven by supernovae will no longer be buoyant, leading to a buildup of gas in the central regions of the galaxy. This allows the central BH to grow rapidly, quickly reaching sufficient mass to begin AGN feedback, in which energy released by the BH heats the gas corona surrounding the galaxy, disrupting the inflow of cold gas and supressing star formation. More evidence of this can be seen from the colour of the points in Fig.2, as this shows a decrease in sSFR for galaxies with high BH mass and halo mass.
+\noindent outflows driven by supernovae will no longer be buoyant, leading to a buildup of gas in the central regions of the galaxy. This allows the central BH to grow rapidly, quickly reaching sufficient mass to begin AGN feedback, in which energy released by the BH heats the gas corona surrounding the galaxy, disrupting the inflow of cold gas and supressing star formation. More evidence of this can be seen from the colour of the points in Fig.4, as this shows a decrease in sSFR for galaxies with high BH mass and halo mass.\par
+
+Since the presence of an AGN is believed to be the cause of galaxies making the transition from the blue cloud to the red sequence, measuring the number of galaxies which exceed $M_crit$ and therefore transition to the red sequence at a given redshift will also provide a measurement of the number of quasars formed at that redshift.
+
+\section{Comparing the Halo Mass Functions of EAGLE and COLOSSUS}
+
+Galaxy halo mass functions for EAGLE galaxies at various redshifts are plotted alongside halo mass functions from COLOSSUS in Fig.2 for comparison. The large uncertainties on the lower values of the EAGLE mass functions are due to the small number of high mass galaxies present in the simulation. Fig.2 shows that COLOSSUS produces mass functions that are a good fit for the measured mass functions from EAGLE. Additionally, the mass functions from COLOSSUS do not suffer from the same lack of measurable high mass galaxies as EAGLE, and therefore do not lose accuracy at high masses.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{Mass_Function.jpeg}
+\caption{Galaxy halo mass functions for galaxies of halo mass greater than $10^{12}M_\odot$ between z=0 and z=4. The dashed lines show mass functions from EAGLE, filled lines show mass functions from COLOSSUS, which have been converted to be in terms of $log_{10}(M_H)$ instead of their standard units of $ln(M_H)$ to match with units from EAGLE.}
+\label{fig:2}
+\end{figure}
+
+As a result of these advantages, halo mass functions from COLOSSUS are used in section 4 to compute the rate at which galaxies transition from the blue cloud to the red sequence, and hence the rate at which quasars are formed.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{Mass_Function_2.jpeg}
+\caption{Galaxy halo mass functions as a function of redshift for galaxies of halo mass greater than $10^{12}M_\odot$, separated into bins of halo mass. Produced using COLOSSUS, this time in terms of $ln(M_H)$.}
+\label{fig:3}
+\end{figure}
+
 
 \section{Relating Halo mass to the Formation Rate of Quasars}
 
-It can be seen from the right plot of Fig.2 that median BH mass increases exponentially for $11.75 \lesssim log_{10}(M_H) \lesssim 12.10$, equivalent to the rapid growth phase described in section 2. However, the total mass of the BH is still comparatively low during this phase, and so the BH cannot be considered to be luminous enough to be a quasar (qso) until it starts following the power law fit at $log_{10}(M_H) \gtrsim 12.10$. If we assume that the qso phase begins when $M_{BH}=M_{BH,start}=10^{7.5}M_\odot$ and ends when $M_{BH}=M_{BH,end}=10^8M_\odot$ (the region between the horizontal lines on Fig.2), then galaxies of halo mass between the vertical lines on Fig.2 can be assumed to contain
+It can be seen from the right plot of Fig.4 that median BH mass increases exponentially for $11.75 \lesssim log_{10}(M_H) \lesssim 12.10$, equivalent to the rapid growth phase described in section 2. However, the total mass of the BH is still comparatively low during this phase, and so the BH cannot be considered to be luminous enough to be a quasar (qso) until it starts following the power law fit at $log_{10}(M_H) \gtrsim 12.10$. If we assume that the qso phase begins when $M_{BH}=M_{BH,start}=10^{7.5}M_\odot$ and ends when $M_{BH}=M_{BH,end}=10^8M_\odot$ (the region between the horizontal lines on Fig.4), then galaxies of halo mass between the vertical lines on Fig.4 can be assumed to contain quasars.
 
 \onecolumngrid
 
@@ -114,12 +137,10 @@ It can be seen from the right plot of Fig.2 that median BH mass increases expone
 \centering
 \includegraphics[width=17cm]{Plot_3.jpeg}
 \caption{Left: Black hole mass - halo mass relation for central galaxies at z=0, the blue line shows median black hole mass. Individual galaxies are plotted as points, coloured by sSFR, using the colourbar to the right. Right: Median black hole mass as a function of halo mass for central galaxies at snapnums 28, 19, 15, and 10 (equivalent to z = 0, 1, 2, and 4 respectively). Dashed lines show power law fits, the dotted line shows an exponential fit.}
-\label{fig:2}
+\label{fig:4}
 \end{figure}
 \twocolumngrid
 
-
-\noindent quasars.\par
 
 This means that the rate at which quasars are formed in EAGLE is equal to the rate at which galaxies cross the $10^{12}M_\odot$ halo mass threshold: $dn/dz$, where n is the number of galaxies of halo mass greater than $10^{12}M_\odot$ per unit comoving volume. This can be calculated using
 
@@ -140,7 +161,7 @@ This means that the rate at which quasars are formed in EAGLE is equal to the ra
     m_H(z)&\approx(1+z)^ae^{-bz}
 \end{align}
 
-\noindent where a and b are fitting parameters, and $M_{H,0}$ is the value of $M_H$ at z=0. Sharma \& Theuns (2020) Gives values for a \& b, averaged over halo masses, as $\bar a \approx 0.24, \bar b \approx 0.75$, but to test their fit for the evolution of EAGLE galaxies crossing the $10^{12}M_\odot$ halo mass threshold, $M_H/M_{H,0}$ is plotted against z in Fig.3 for EAGLE galaxies and for $m_H(z)$. Fig.3 shows that Equation (5) fits the evolution of halo mass with redshift well for EAGLE galaxies crossing the $10^{12}M_\odot$ halo mass threshold. The outliers in Fig.3 that are significantly more massive than they are at z=0 are believed to be caused by halos passing through one another and contributing to each others' measured masses, before moving away at $z\approx0$, leading to  sudden decreases in the measured value of $M_H$.
+\noindent where a and b are fitting parameters, and $M_{H,0}$ is the value of $M_H$ at z=0. Sharma \& Theuns (2020) Gives values for a \& b, averaged over halo masses, as $\bar a \approx 0.24, \bar b \approx 0.75$, but to test
 
 \onecolumngrid
 
@@ -149,57 +170,32 @@ This means that the rate at which quasars are formed in EAGLE is equal to the ra
 \centering
 \includegraphics[width=\linewidth]{Plot_5.jpeg}
 \caption{The black lines show $M_H/M_{H,0}$ as a function of redshift for central galaxies which cross the $10^{12}M_\odot$ halo mass threshold at z=2. The red line shows $M_H/M_{H,0}$ as described by Equation (5).}
-\label{fig:3}
-\end{figure}
-\twocolumngrid
-
-
-\section{Images}
-
-
-\onecolumngrid
-
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\linewidth]{Mass_Function.jpeg}
-\caption{Galaxy halo mass functions for galaxies of halo mass greater than $10^{12}M_\odot$ between z=0 and z=4. The dashed lines show mass functions from EAGLE, filled lines show mass functions from COLOSSUS.}
 \label{fig:5}
 \end{figure}
 \twocolumngrid
 
 
+\noindent their fit for the evolution of EAGLE galaxies crossing the $10^{12}M_\odot$ halo mass threshold, $M_H/M_{H,0}$ is plotted against z in Fig.5 for EAGLE galaxies and for $m_H(z)$. Fig.5 shows that Equation (5) fits the evolution of halo mass with redshift well for EAGLE galaxies crossing the $10^{12}M_\odot$ halo mass threshold (outliers in Fig.5 that are significantly more massive than they are at z=0 are believed to be caused by halos passing through one another and contributing to each others' measured masses, before moving away at $z\approx0$, leading to  sudden decreases in the measured value of $M_H$). This means that the constant values of $\bar a$ and $\bar b$ can be substituted into Equation (4)
+
+\begin{equation}
+    \frac{dln(M_H)}{dz}=\frac{\bar a}{(1+z)}-\bar b
+\end{equation}
+
+\noindent meaning that $dln(M_H)/dz$ and $dn/dln(M_H)$ are now functions of z only.\par
+
+The top plot of Fig.6 shows the mass function $dn/dln(M_H)$ for reference, and in the bottom plot, $dln(M_H)/dz$ and $dn/dln(M_H)$ are multiplied as in Equation (3) to produce a plot of the formation rate of galaxies of halo mass greater than $10^{12}M_\odot$, and hence the formation rate of quasars, $dn/dz$, as a function of redshift.
+
 \onecolumngrid
 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\linewidth]{Mass_Function_2.jpeg}
-\caption{Galaxy halo mass function as a function of redshift for galaxies of halo mass greater than $10^{12}M_\odot$. Produced using COLOSSUS.}
+\includegraphics[width=13cm]{Plot_6.jpeg}
+\caption{Top: Galaxy halo mass function as a function of redshift for galaxies of mass $10^{12}M_\odot$ produced using COLOSSUS. Bottom: Formation rate of halos of mass greater than $10^{12}M_\odot$ as a function of redshift, calculated using Equation (4). This appears to peak at z=2.}
 \label{fig:6}
 \end{figure}
 \twocolumngrid
-
-
-\onecolumngrid
-
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=12cm]{Plot_6.jpeg}
-\caption{Top: Galaxy halo mass function as a function of redshift for galaxies of mass $10^{12}M_\odot$ produced using COLOSSUS. Bottom: Formation rate of halos of mass greater than $10^{12}M_\odot$ as a function of redshift, calculated using Equation (4). This appears to peak at z=2.}
-\label{fig:8}
-\end{figure}
-\twocolumngrid
-
-
-\section{Section heading}
-
-Duis eget tellus tortor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In tellus nulla, sodales eu pulvinar at, accumsan quis magna. Nunc sed lacus diam. Nam enim mauris, imperdiet ut egestas quis, tincidunt at odio. Ut viverra nulla at libero dictum aliquet. Suspendisse lacus lacus, imperdiet nec elit nec, ullamcorper facilisis ex. \cite{Ikea} \cite{EAGLE}
-
-\subsection{Subsection heading}
-
-Proin sit amet mauris tincidunt, consectetur nisi ultrices, dapibus elit. Nullam vitae faucibus odio, pharetra ultrices tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+ 
 
 \section{Conclusions}
 Donec finibus, tellus sit amet luctus sodales, lectus ante accumsan ligula, at condimentum lorem justo a sapien. Phasellus vel tortor vitae metus lacinia efficitur ac vel ex. Aenean eget congue leo. Aliquam cursus mauris sit amet arcu dignissim, vel condimentum nisi sodales. 
