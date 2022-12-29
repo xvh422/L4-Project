@@ -142,7 +142,7 @@ It can be seen from the right plot of Fig.4 that median BH mass increases expone
 \twocolumngrid
 
 
-This means that the rate at which quasars are formed in EAGLE is equal to the rate at which galaxies cross the $10^{12}M_\odot$ halo mass threshold: $dn/dz$, where n is the number of galaxies of halo mass greater than $10^{12}M_\odot$ per unit comoving volume. This can be calculated using
+This means that the rate at which quasars are formed in EAGLE is equal to the rate at which galaxies cross the $10^{12}M_\odot$ halo mass threshold: $dn/dz$, where n is the number of galaxies of halo mass greater than $10^{12}M_\odot$ per unit comoving volume. This can be calculated using \cite{Correa}
 
 \begin{equation}
     \frac{dn}{dz}=\frac{dn}{dln(M_H)}\frac{dln(M_H)}{dz}
@@ -154,14 +154,14 @@ This means that the rate at which quasars are formed in EAGLE is equal to the ra
     \frac{dln(M_H)}{dz}=\frac{a}{(1+z)}-b
 \end{equation}
 
-\noindent This corresponds to the parametrisation given in Sharma \& Theuns (2020) in which $M_H$ can be written as
+\noindent This corresponds to the parametrisation described by in Correa et al. (2015) in which $M_H$ can be written as
 
 \begin{align}
     \frac{M_H}{M_{H,0}}&=m_H(z) \nonumber \\
     m_H(z)&\approx(1+z)^ae^{-bz}
 \end{align}
 
-\noindent where a and b are fitting parameters, and $M_{H,0}$ is the value of $M_H$ at z=0. Sharma \& Theuns (2020) Gives values for a \& b, averaged over halo masses, as $\bar a \approx 0.24, \bar b \approx 0.75$, but to test
+\noindent where a and b are fitting parameters, and $M_{H,0}$ is the value of $M_H$ at z=0. Correa et al. (2015) Gives values for a \& b, averaged over halo masses, as $\bar a \approx 0.24, \bar b \approx 0.75$, but to test
 
 \onecolumngrid
 
@@ -198,7 +198,10 @@ The top plot of Fig.6 shows the mass function $dn/dln(M_H)$ for reference, and i
  
 
 \section{Conclusions}
-Donec finibus, tellus sit amet luctus sodales, lectus ante accumsan ligula, at condimentum lorem justo a sapien. Phasellus vel tortor vitae metus lacinia efficitur ac vel ex. Aenean eget congue leo. Aliquam cursus mauris sit amet arcu dignissim, vel condimentum nisi sodales. 
+
+The formation rate of quasars as a function of redshift has been calculated from the mass function of galaxies in the EAGLE Ref-L0100N1504 simulation which have crossed the ass threshold necessary to make the transition from the blue cloud to the red sequence and the logarithmic growth rate of galactic halos described by Correa et al. (2015). The quasar formation rate appears to peak at $z\approx1$.\par
+
+If the duration of the qso phase after formation can be determined, the number of quasars present in the universe at a given redshift can be estimated. This has applications in developing a model for quasar evolution.
 
 \bibliographystyle{unsrtnat}
 \bibliography{citation.bib}
