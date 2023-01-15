@@ -69,7 +69,7 @@ Unless stated otherwise, all of the plots in this paper were produced using data
 
 \subsection{COLOSSUS}
 
-Some plots in this paper were also produced using COLOSSUS \cite{COLOSSUS}. This is a python package for calculations related to cosmology, the large-scale structure of matter in the universe, and the properties of dark matter halos. In particular, it is used in this paper to produce galaxy halo mass functions. It is shown in Fig.? that the mass functions produced by COLOSSUS are a good fit for mass functions produced using data from EAGLE.
+Some plots in this paper were also produced using COLOSSUS \cite{COLOSSUS}. This is a Python package for calculations related to cosmology, the large-scale structure of matter in the universe, and the properties of dark matter halos. In particular, it is used in this paper to produce galaxy halo mass functions. It is shown in Fig.2 that the mass functions produced by COLOSSUS are a good fit for mass functions produced using data from EAGLE.
 
 \section{The Effect of AGN Feedback on Star Formation}
 
@@ -103,11 +103,11 @@ The difference in star formation rate between the blue cloud and the red sequenc
 
 \noindent outflows driven by supernovae will no longer be buoyant, leading to a buildup of gas in the central regions of the galaxy. This allows the central BH to grow rapidly, quickly reaching sufficient mass to begin AGN feedback, in which energy released by the BH heats the gas corona surrounding the galaxy, disrupting the inflow of cold gas and supressing star formation. More evidence of this can be seen from the colour of the points in Fig.4, as this shows a decrease in sSFR for galaxies with high BH mass and halo mass.\par
 
-Since the presence of an AGN is believed to be the cause of galaxies making the transition from the blue cloud to the red sequence, measuring the number of galaxies which exceed $M_crit$ and therefore transition to the red sequence at a given redshift will also provide a measurement of the number of quasars formed at that redshift.
+Since the presence of an AGN is believed to be the cause of galaxies making the transition from the blue cloud to the red sequence, measuring the number of galaxies which exceed $M_{crit}$ and therefore transition to the red sequence at a given redshift will also provide a measurement of the number of quasars formed at that redshift.
 
 \section{Comparing the Halo Mass Functions of EAGLE and COLOSSUS}
 
-Galaxy halo mass functions for EAGLE galaxies at various redshifts are plotted alongside halo mass functions from COLOSSUS in Fig.2 for comparison. The large uncertainties on the lower values of the EAGLE mass functions are due to the small number of high mass galaxies present in the simulation. Fig.2 shows that COLOSSUS produces mass functions that are a good fit for the measured mass functions from EAGLE. Additionally, the mass functions from COLOSSUS do not suffer from the same lack of measurable high mass galaxies as EAGLE, and therefore do not lose accuracy at high masses.
+Galaxy halo mass functions for EAGLE galaxies at various redshifts are plotted alongside halo mass functions from COLOSSUS in Fig.2 for comparison. The large uncertainties on the lower values of the EAGLE mass functions are due to the small number of high mass galaxies present in the simulation. Fig.2 shows that COLOSSUS produces mass functions that are a good fit for the measured mass functions from EAGLE. Additionally, the mass functions from COLOSSUS do not suffer from the same lack of measurable high mass galaxies as EAGLE, which is the cause for the large error in the EAGLE mass functions at higher masses, as seen in Fig.2.
 
 \begin{figure}[H]
 \centering
@@ -139,6 +139,7 @@ It can be seen from the right plot of Fig.4 that median BH mass increases expone
 \caption{Left: Black hole mass - halo mass relation for central galaxies at z=0, the blue line shows median black hole mass. Individual galaxies are plotted as points, coloured by sSFR, using the colourbar to the right. Right: Median black hole mass as a function of halo mass for central galaxies at snapnums 28, 19, 15, and 10 (equivalent to z = 0, 1, 2, and 4 respectively). Dashed lines show power law fits, the dotted line shows an exponential fit.}
 \label{fig:4}
 \end{figure}
+\clearpage
 \twocolumngrid
 
 
@@ -161,7 +162,7 @@ This means that the rate at which quasars are formed in EAGLE is equal to the ra
     m_H(z)&\approx(1+z)^ae^{-bz}
 \end{align}
 
-\noindent where a and b are fitting parameters, and $M_{H,0}$ is the value of $M_H$ at z=0. Correa et al. (2015) Gives values for a \& b, averaged over halo masses, as $\bar a \approx 0.24, \bar b \approx 0.75$, but to test
+\noindent where a and b are fitting parameters, and $M_{H,0}$ is the value of $M_H$ at z=0. Correa et al. (2015)
 
 \onecolumngrid
 
@@ -172,10 +173,11 @@ This means that the rate at which quasars are formed in EAGLE is equal to the ra
 \caption{The black lines show $M_H/M_{H,0}$ as a function of redshift for central galaxies which cross the $10^{12}M_\odot$ halo mass threshold at z=2. The red line shows $M_H/M_{H,0}$ as described by Equation (5).}
 \label{fig:5}
 \end{figure}
+\clearpage
 \twocolumngrid
 
 
-\noindent their fit for the evolution of EAGLE galaxies crossing the $10^{12}M_\odot$ halo mass threshold, $M_H/M_{H,0}$ is plotted against z in Fig.5 for EAGLE galaxies and for $m_H(z)$. Fig.5 shows that Equation (5) fits the evolution of halo mass with redshift well for EAGLE galaxies crossing the $10^{12}M_\odot$ halo mass threshold (outliers in Fig.5 that are significantly more massive than they are at z=0 are believed to be caused by halos passing through one another and contributing to each others' measured masses, before moving away at $z\approx0$, leading to  sudden decreases in the measured value of $M_H$). This means that the constant values of $\bar a$ and $\bar b$ can be substituted into Equation (4)
+\noindent gives values for a \& b, averaged over halo masses, as $\bar a \approx 0.24, \bar b \approx 0.75$, but to test their fit for the evolution of EAGLE galaxies crossing the $10^{12}M_\odot$ halo mass threshold, $M_H/M_{H,0}$ is plotted against z in Fig.5 for EAGLE galaxies and for $m_H(z)$. Fig.5 shows that Equation (5) fits the evolution of halo mass with redshift well for EAGLE galaxies crossing the $10^{12}M_\odot$ halo mass threshold (outliers in Fig.5 that are significantly more massive than they are at z=0 are believed to be caused by halos passing through one another and contributing to each others' measured masses, before moving away at $z\approx0$, leading to  sudden decreases in the measured value of $M_H$). This means that the constant values of $\bar a$ and $\bar b$ can be substituted into Equation (4)
 
 \begin{equation}
     \frac{dln(M_H)}{dz}=\frac{\bar a}{(1+z)}-\bar b
@@ -199,7 +201,7 @@ The top plot of Fig.6 shows the mass function $dn/dln(M_H)$ for reference, and i
 
 \section{Conclusions}
 
-The formation rate of quasars as a function of redshift has been calculated from the mass function of galaxies in the EAGLE Ref-L0100N1504 simulation which have crossed the ass threshold necessary to make the transition from the blue cloud to the red sequence and the logarithmic growth rate of galactic halos described by Correa et al. (2015). The quasar formation rate appears to peak at $z\approx1$.\par
+The formation rate of quasars as a function of redshift has been calculated from the mass function of galaxies in the EAGLE Ref-L0100N1504 simulation which have crossed the mass threshold necessary to make the transition from the blue cloud to the red sequence and the logarithmic growth rate of galactic halos described by Correa et al. (2015). The quasar formation rate appears to peak at $z\approx1$.\par
 
 If the duration of the qso phase after formation can be determined, the number of quasars present in the universe at a given redshift can be estimated. This has applications in developing a model for quasar evolution.
 
