@@ -1,0 +1,224 @@
+%%%%% Document Setup %%%%%%%%
+
+\documentclass[12pt, twocolumn]{report}%{revtex4}    % Font size (12pt) and column number (one or two).
+
+\usepackage{times}  % Times New Roman font type
+
+\usepackage{natbib}
+
+\usepackage{authblk}
+
+\usepackage[a4paper, left=2.5cm, right=2.5cm,
+ top=2.5cm, bottom=2.5cm]{geometry}       % Defines paper size and margin length
+
+\renewcommand{\baselinestretch}{1.15}     % Defines the line spacing
+
+\usepackage[font=small,
+labelfont=bf]{caption}                      % Defines caption font size and caption title bolded
+
+\usepackage{graphics,graphicx,epsfig,ulem}	% Makes sure all graphics works
+\usepackage{amsmath}                        % Adds mathematical features for equations
+\usepackage{float}
+\usepackage{amssymb}
+
+\usepackage{ltxgrid}
+
+\usepackage{etoolbox}                       % Customise date to preferred format
+\makeatletter
+\patchcmd{\frontmatter@RRAP@format}{(}{}{}{}
+\patchcmd{\frontmatter@RRAP@format}{)}{}{}{}
+%\renewcommand\Dated@name{}
+\makeatother
+
+\def\thesection{\arabic{section}}
+
+\def\bibsection{\section*{References}}        % Position reference section correctly
+
+%%%%% Document %%%%%
+\begin{document}                     
+
+\title{A Model for the Evolution of Quasars} 
+\date{Submitted: \today{}}
+\author{Joseph Carter}
+\affil{\normalfont Level 4 Project, MPhys Physics with Astronomy\\ Supervisor: Professor T. Theuns\\ Department of Physics, Durham University}
+
+%\begin{abstract}
+ 
+%Abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract %abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract %abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract %abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract 
+
+%\end{abstract}
+
+
+\maketitle
+%\thispagestyle{plain} % produces page number for front page
+\onecolumngrid
+
+
+\tableofcontents
+\newpage
+\twocolumngrid
+%\let\toc@pre\relax
+%\let\toc@post\relax
+
+
+\section{Introduction}
+
+Almost all central galaxies (galaxies that are not satellites) are believed to contain a supermassive black hole (SMBH) at their centre. When a SMBH begins to rapidly increase in mass from accretion, the energy released from matter falling onto the black hole (BH) can exceed the luminosity of its host galaxy. These types of SMBH are known as active galactic nuclei (AGN). The most luminous AGN, with luminosities ranging between $~10^{11} - 10^{15}L_\odot$, are called quasars. The evolution of the host galaxies' dark matter halos is well understood, but how this relates to the formation and evolution of quasars is not as well understood.\par
+
+The aim of this project is to develop a model for the formation and evolution of quasars using a model for galaxy formation which includes feedback from stars and accreting black holes. This paper describes how the relation between the growth of SMBHs and the growth of their host galaxies can be used to determine the rate at which quasars are formed in the universe.
+
+\subsection{Overview}
+
+The remainder of this section contains descriptions of the EAGLE simulations, which were used to produce most of the data used in this project, the COLOSSUS python package for cosmology-related calculations, and it is shown that COLOSSUS can be used to produce halo mass functions which are a good fit for EAGLE data, as these are used in section 3 to estimate the formation rate of quasars.\par
+
+Section 2 discusses the motivation for this model. It is shown that many high mass galaxies have their star formation inhibited by AGN feedback, implying that there is a relationship between the mass of the galaxy and the presence or absence of an AGN. This relationship is discussed in further detail in section 3, and it is shown that the evolution of halo mass in EAGLE can be used to estimate the formation rate of quasars.
+
+\subsection{The EAGLE Simulations}
+
+Unless stated otherwise, all of the plots in this paper were produced using data from the Virgo Consortium’s “Evolution and Assembly of GaLaxies and their Environments” simulation suite (EAGLE) (\cite{EAGLE}). This is a set of cosmological hydrodynamical simulations which use a modified version of the GADGET smoothed particle hydrodynamics code (\cite{GADGET}). All plots were produced using the Ref-L0100N1504 simulation. Full details of the parameters used in the simulations can be found in the EAGLE paper. In EAGLE, halos that exceed a certain mass are given a 'seed' SMBH with an initial mass of $10^5M_\odot$.
+
+\subsection{COLOSSUS}
+
+Some plots in this paper were also produced using COLOSSUS (\cite{COLOSSUS}). This is a Python package for calculations related to cosmology, the large-scale structure of matter in the universe, and the properties of dark matter halos. In particular, it is used in this project to produce halo mass functions, as well as calculating the values of cosmological parameters, and converting between redshift and cosmic time. It is shown in the next section that the mass functions produced by COLOSSUS are a good fit for mass functions produced using data from EAGLE.
+
+\subsection{Comparing the Halo Mass Functions of EAGLE and COLOSSUS}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{Mass_Function.jpeg}
+\caption{Halo mass functions for galaxies of halo mass greater than $10^{12}M_\odot$ between z=0 and z=4. The dashed lines show mass functions from EAGLE, filled lines show mass functions from COLOSSUS, which have been converted to be in terms of $log_{10}(M_H)$ instead of their standard units of $ln(M_H)$ to match with units from EAGLE.}
+\label{fig:1}
+\end{figure}
+
+Halo mass functions for EAGLE galaxies at various redshifts are plotted alongside halo mass functions from COLOSSUS in Fig.1 for comparison. The large uncertainties on the lower values of the EAGLE mass functions are due to the small number of high mass galaxies present in the simulation. It can be seen from Fig.1 that COLOSSUS produces mass functions that are a good fit for the measured mass functions from EAGLE. Additionally, the mass functions from COLOSSUS do not suffer from the same lack of measurable high mass galaxies as EAGLE, which is the cause for the large error in the EAGLE mass functions at higher masses, as seen in Fig.1.\par
+
+As a result of these advantages, the comoving number density of halos of a given mass, plotted as a function of redshift, is used in section 3 to compute the rate at which galaxies transition from the blue cloud to the red sequence, and hence the rate at which quasars are formed as a function of redshift.
+
+\section{The Effect of AGN Feedback on Star Formation}
+
+The top plot of Fig.2 shows the relationship between u-r magnitude, which shows how blue (low magnitude) or red (high magnitude) an object is, and k-band magnitude, which is strongly correlated to stellar mass, for galaxies of mass greater than $10^9M_\odot$. It can be seen that the galaxy population in EAGLE is divided into a highly star forming "blue cloud" which contains the majority of galaxies with stellar mass below $10^{10}M_\odot$ and a "red sequence" with a significantly lower specific star formation rate (sSFR), which contains a significant amount of the high-mass galaxies (many of the galaxies in Fig.2 actually have an sSFR of 0, but have been equated to the lowest non-zero sSFR so that they can be shown on a log plot). The difference in star formation rate between the blue cloud and the red sequence is believed to depend on the type of feedback present in the galaxy. Star formation in blue cloud galaxies is regulated by  stellar feedback, in which the energy injected into the interstellar medium by supernovae balances the energy lost due to cosmological accretion (\cite{Ikea}).
+
+\onecolumngrid
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=15cm]{Plot_1.jpeg}
+\caption{Top: u-r magnitude as a function of k-band magnitude for galaxies of stellar mass $\gtrsim10^9M_\odot$ at z=0. k-band magnitude is strongly correlated to stellar mass, so brighter galaxies can be taken to have higher stellar mass. Individual galaxies are plotted as points, coloured by sSFR, using the colourbar to the right. Bottom: Histogram of $M_{BH}/M_*$ for galaxies of stellar mass between $10^{10} - 10^{10.5}M_\odot$, separated into blue cloud galaxies and red sequence galaxies.}
+\label{fig:2}
+\end{figure}
+\twocolumngrid
+
+\noindent However, for galaxies more massive than a critical mass scale (\cite{Quasar}),
+
+\begin{equation}
+    M_{crit}\sim10^{12}\Delta_{z}^{-\frac{3}{8}}M_\odot
+\end{equation}
+
+\noindent where,
+
+\begin{equation}
+    \Delta_z\equiv(\Omega_m(1+z)^3+\Omega_\Lambda)^{\frac{1}{3}}
+\end{equation}
+
+\noindent outflows driven by supernovae will no longer be buoyant, leading to a buildup of gas in the central regions of the galaxy. This allows the central BH to grow rapidly, quickly reaching sufficient mass to begin AGN feedback, in which energy released by the BH heats the gas corona surrounding the galaxy, disrupting the inflow of cold gas and suppressing star formation. More evidence of this can be seen from
+
+\noindent the colour of the points in Fig.3, as this shows a decrease in sSFR for galaxies with high BH mass and halo mass. The lower histogram of Fig.2 shows the difference in the ratio between BH mass and stellar mass for galaxies in the blue cloud and the red sequence. The histogram peaks at a higher value for the red sequence than for the blue cloud, implying that red sequence galaxies, on average, have a more massive BH compared to the mass of the host galaxy than for blue cloud galaxies. This provides further evidence that AGN feedback is responsible for the low star formation in the red sequence, as AGN are typically more massive than inactive SMBH's due to their high accretion rate.\par
+
+Since the presence of an AGN is believed to be the cause of galaxies making the transition from the blue cloud to the red sequence, measuring the number of galaxies which exceed $M_{crit}$ and therefore transition to the red sequence at a given redshift will also provide a measurement of the number of quasars formed at that redshift. This provides the motivation for this model, and is discussed further in the next section.
+
+\section{Relating Halo mass to the Formation Rate of Quasars}
+
+
+Fig.3 shows the black hole mass - halo mass relation for central galaxies of stellar mass $\gtrsim10^9M_\odot$. There appears to be little to no correlation at low halo masses, and the gaps with no points are due to black holes growing suddenly via mergers instead of continuously via accretion. For halo masses above $~10^{11.5}M_\odot$, black hole mass ad halo mass appear to be correlated. One problem when determining which black holes are accreting at close to the Eddington rate is that the instantaneous black hole accretion rates measured in EAGLE have a very large scatter, but it is known that halos increase in mass with cosmic time, so halos plotted on Fig.3 can be assumed to contain black holes that are growing according to the relation shown in Fig.3.\par
+
+The right plot of Fig.3 shows that black hole mass follows an exponential fit for medium-mass halos, so halos that lie on the exponential curve (those between the vertical dotted lines) can be assumed to contain black holes that are growing exponentially, following the BH mass - halo mass relation, and halos that lie on the power law fit (those at higher masses than the exponential curve) can be assumed to contain black holes that are growing according to a power law. The exponential growth region seems promising for approximately Eddington limited black hole growth, but the black hole masses in this region are significantly lower than the measured masses of real quasars, which can have masses of $\sim10^9M_\odot$ (\cite{Marshall}). This could be a result of the approximation in EAGLE that all SMBHs start as seeds of a specific mass. However, it is shown in
+
+\onecolumngrid
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=17cm]{Plot_3.jpeg}
+\caption{Left: Black hole mass - halo mass relation for central galaxies of stellar mass $\gtrsim10^9M_\odot$ at z=0, the blue line shows median black hole mass. Individual halos are plotted as points, coloured by sSFR, using the colourbar to the right. The dotted lines show BH mass (horizontal) and halo mass (vertical) at the beginning and end of the qso phase. Right: Median black hole mass as a function of halo mass for central galaxies at snapnums 28, 19, 15, and 10 (equivalent to z = 0, 1, 2, and 4 respectively). Dashed lines show power law fits, the dotted line shows an exponential fit.}
+\label{fig:3}
+\end{figure}
+\twocolumngrid
+
+
+\noindent \cite{Quasar} that the seed mass of the SMBHs has little effect on their final mass. Additionally,...\par
+
+The median black hole mass on the left plot of Fig.3 reaches a high enough BH mass for a luminous AGN at a halo mass of $\sim10^{12}M_\odot$. This means that the rate at which quasars are formed in EAGLE is equal to the rate at which galaxies cross the $10^{12}M_\odot$ halo mass threshold: $dn/dz$, where n is the number of galaxies of halo mass greater than $10^{12}M_\odot$ per unit comoving volume. This can be calculated using (\cite{Correa})
+
+\begin{equation}
+    \frac{dn}{dz}=\frac{dn}{dln(M_H)}\frac{dln(M_H)}{dz}
+\end{equation}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{Accretion_rates.png}
+\caption{Instantaneous BH accretion rate - BH mass relation for halos more massive than $10^{10}M_\odot$. Individual halos are plotted as points, coloured by halo mass. The orange line shows median BH accretion rate, and appears to increase with increasing BH mass.}
+\label{fig:4}
+\end{figure}
+
+\onecolumngrid
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{Plot_5.jpeg}
+\caption{The black lines show $M_H/M_{H,0}$ as a function of redshift for central galaxies which cross the $10^{12}M_\odot$ halo mass threshold at z=2. The red line shows $M_H/M_{H,0}$ as described by Equation (5).}
+\label{fig:5}
+\end{figure}
+\clearpage
+\twocolumngrid
+
+
+\noindent where $dn/dln(M_H)$ is the comoving number density of halos with mass $M_H=10^{12}M_\odot$ at a given redshift, which can be calculated from halo mass functions produced using colossus, and the logarithmic growth rate is given by
+
+\begin{equation}
+    \frac{dln(M_H)}{dz}=\frac{a}{(1+z)}-b
+\end{equation}
+
+\noindent This corresponds to the parametrisation described by \cite{Correa}, in which $M_H$ can be written as
+
+\begin{align}
+    \frac{M_H}{M_{H,0}}&=m_H(z) \nonumber \\
+    m_H(z)&\approx(1+z)^ae^{-bz}
+\end{align}
+
+\noindent where a and b are fitting parameters, and $M_{H,0}$ is the value of $M_H$ at z=0. Correa et al. (2015)
+
+\noindent gives values for a \& b, averaged over halo masses, as $\bar a \approx 0.24, \bar b \approx 0.75$, but to test their fit for the evolution of EAGLE galaxies crossing the $10^{12}M_\odot$ halo mass threshold, $M_H/M_{H,0}$ is plotted against z in Fig.5 for EAGLE galaxies and for $m_H(z)$. Fig.5 shows that Equation (5) fits the evolution of halo mass with redshift well for EAGLE galaxies crossing the $10^{12}M_\odot$ halo mass threshold (outliers in Fig.5 that are significantly more massive than they are at z=0 are believed to be caused by halos passing through one another and contributing to each others' measured masses, before moving away at $z\approx0$, leading to  sudden decreases in the measured value of $M_H$). This means that the constant values of $\bar a$ and $\bar b$ can be substituted into Equation (4)
+
+\begin{equation}
+    \frac{dln(M_H)}{dz}=\frac{\bar a}{(1+z)}-\bar b
+\end{equation}
+
+\noindent meaning that $dln(M_H)/dz$ and $dn/dln(M_H)$ are now functions of z only.\par
+
+The top plot of Fig.6 shows the mass function $dn/dln(M_H)$ for reference, and in the bottom plot, $dln(M_H)/dz$ and $dn/dln(M_H)$ are multiplied as in Equation (3) to produce a plot of the formation rate of galaxies of halo mass greater than $10^{12}M_\odot$, and hence the formation rate of quasars, $dn/dz$, as a function of redshift. The formation rate peaks at $z\approx1$ before decreasing for $1 \gtrsim z \geq 0$.
+
+\onecolumngrid
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=12.5cm]{Plot_6.jpeg}
+\caption{Top: Comoving number density of halos with mass $10^{12}M_\odot$ as a function of redshift, produced using COLOSSUS. Bottom: Formation rate of halos of mass greater than $10^{12}M_\odot$ as a function of redshift, calculated using Equation (4). This appears to peak at $z\approx1$.}
+\label{fig:6}
+\end{figure}
+\newpage
+\twocolumngrid
+ 
+
+\section{Conclusions}
+
+The formation rate of quasars as a function of redshift has been calculated from the mass function of galaxies in the EAGLE Ref-L0100N1504 simulation which have crossed the mass threshold necessary to make the transition from the blue cloud to the red sequence and the logarithmic growth rate of galactic halos described by Correa et al. (2015). The quasar formation rate appears to peak at $z\approx1$.\par
+
+If the duration of the quasar phase after formation can be determined, the number of quasars present in the universe at a given redshift can be estimated. This has applications in developing a model for quasar evolution.
+
+\bibliographystyle{mn2e.bst}  % {unsrtnat}
+\bibliography{citation.bib}
+
+\end{document}
