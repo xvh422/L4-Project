@@ -127,12 +127,12 @@ The top plot of Fig.2 shows the relationship between u-r magnitude, which shows 
 
 Since the presence of an AGN is believed to be the cause of galaxies making the transition from the blue cloud to the red sequence, measuring the number of galaxies which exceed $M_{crit}$ and therefore transition to the red sequence at a given redshift will also provide a measurement of the number of quasars formed at that redshift. This provides the motivation for this model, and is discussed further in the next section.
 
-\section{Relating Halo mass to the Formation Rate of Quasars}
-
+\section{Relating Halo Mass to the Formation Rate of Quasars}
+\subsection{The Black Hole Mass - Halo Mass Relation}
 
 Fig.3 shows the black hole mass - halo mass relation for central galaxies of stellar mass $\gtrsim10^9M_\odot$. There appears to be little to no correlation at low halo masses, and the gaps with no points are due to black holes growing suddenly via mergers instead of continuously via accretion. For halo masses above $~10^{11.5}M_\odot$, black hole mass ad halo mass appear to be correlated. One problem when determining which black holes are accreting at close to the Eddington rate is that the instantaneous black hole accretion rates measured in EAGLE have a very large scatter, but it is known that halos increase in mass with cosmic time, so halos plotted on Fig.3 can be assumed to contain black holes that are growing according to the relation shown in Fig.3.\par
 
-The right plot of Fig.3 shows that black hole mass follows an exponential fit for medium-mass halos, so halos that lie on the exponential curve (those between the vertical dotted lines) can be assumed to contain black holes that are growing exponentially, following the BH mass - halo mass relation, and halos that lie on the power law fit (those at higher masses than the exponential curve) can be assumed to contain black holes that are growing according to a power law. The exponential growth region seems promising for approximately Eddington limited black hole growth, but the black hole masses in this region are significantly lower than the measured masses of real quasars, which can have masses of $\sim10^9M_\odot$ (\cite{Marshall}). This could be a result of the approximation in EAGLE that all SMBHs start as seeds of a specific mass. However, it is shown in
+The right plot of Fig.3 shows that black hole mass follows an exponential fit for medium-mass halos, so halos that lie on the exponential curve (those between the vertical dotted lines) can be assumed to contain black holes that are growing exponentially, following the BH mass - halo mass relation, and halos that lie on the power law fit (those at higher masses than the exponential curve) can be assumed to contain black holes that are growing according to a power law. The exponential growth region seems promising for approximately Eddington limited black hole growth, but the black hole masses in this region are significantly lower than the measured masses of real quasars, which can have masses of $\sim10^9M_\odot$ (\cite{Marshall}). This could be a result of the approximation in EAGLE that all SMBHs start as seeds of a specific mass.
 
 \onecolumngrid
 
@@ -146,35 +146,26 @@ The right plot of Fig.3 shows that black hole mass follows an exponential fit fo
 \twocolumngrid
 
 
-\noindent \cite{Quasar} that the seed mass of the SMBHs has little effect on their final mass. Additionally,...\par
+ \noindent However, it is shown in \cite{Quasar} that the seed mass of the SMBHs has little effect on their final mass. Additionally, although the instantaneous BH accretion rates in EAGLE have a large scatter, it can be seen from Fig.4 that the Eddington ratios of the highest mass black holes do not appear to differ much from the Eddington ratios of $10^{6.5-7.5}M_\odot$ black holes. Therefore, the most luminous AGN should be the more massive black holes on the power law fit.\par
 
-The median black hole mass on the left plot of Fig.3 reaches a high enough BH mass for a luminous AGN at a halo mass of $\sim10^{12}M_\odot$. This means that the rate at which quasars are formed in EAGLE is equal to the rate at which galaxies cross the $10^{12}M_\odot$ halo mass threshold: $dn/dz$, where n is the number of galaxies of halo mass greater than $10^{12}M_\odot$ per unit comoving volume. This can be calculated using (\cite{Correa})
+ \subsection{Calculating the Quasar Formation Rate}
+
+The median black hole mass on the left plot of Fig.3 reaches a high enough BH mass for a luminous AGN at a halo mass of $\sim10^{12}M_\odot$. This model assumes that the rate at which quasars are formed in EAGLE is equal to the rate at which galaxies cross the $10^{12}M_\odot$ halo 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{Plot_12.jpeg}
+\caption{Instantaneous Eddington ratio - BH mass relation for halos more massive than $10^{10}M_\odot$. Individual halos are plotted as points, coloured by halo mass. The orange line shows median Eddington ratio, and appears to increase up to a BH mass of $\sim10^{6.5}M_\odot$, before its evolution stops.}
+\label{fig:4}
+\end{figure}
+
+mass threshold: $dn/dz$, where n is the number of galaxies of halo mass greater than $10^{12}M_\odot$ per unit comoving volume. This can be calculated using (\cite{Correa})
 
 \begin{equation}
     \frac{dn}{dz}=\frac{dn}{dln(M_H)}\frac{dln(M_H)}{dz}
 \end{equation}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=\linewidth]{Accretion_rates.png}
-\caption{Instantaneous BH accretion rate - BH mass relation for halos more massive than $10^{10}M_\odot$. Individual halos are plotted as points, coloured by halo mass. The orange line shows median BH accretion rate, and appears to increase with increasing BH mass.}
-\label{fig:4}
-\end{figure}
-
-\onecolumngrid
-
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\linewidth]{Plot_5.jpeg}
-\caption{The black lines show $M_H/M_{H,0}$ as a function of redshift for central galaxies which cross the $10^{12}M_\odot$ halo mass threshold at z=2. The red line shows $M_H/M_{H,0}$ as described by Equation (5).}
-\label{fig:5}
-\end{figure}
-\clearpage
-\twocolumngrid
-
-
-\noindent where $dn/dln(M_H)$ is the comoving number density of halos with mass $M_H=10^{12}M_\odot$ at a given redshift, which can be calculated from halo mass functions produced using colossus, and the logarithmic growth rate is given by
+\noindent where $dn/dln(M_H)$ is the comoving number density of halos with mass $M_H=10^{12}M_\odot$ at a given redshift, which can be calculated from halo mass functions produced using COLOSSUS, and the logarithmic growth rate is given by
 
 \begin{equation}
     \frac{dln(M_H)}{dz}=\frac{a}{(1+z)}-b
@@ -187,7 +178,14 @@ The median black hole mass on the left plot of Fig.3 reaches a high enough BH ma
     m_H(z)&\approx(1+z)^ae^{-bz}
 \end{align}
 
-\noindent where a and b are fitting parameters, and $M_{H,0}$ is the value of $M_H$ at z=0. Correa et al. (2015)
+\noindent where a and b are fitting parameters, and $M_{H,0}$ is the value of $M_H$ at z=0. \cite{Correa}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{Plot_5.jpeg}
+\caption{The black lines show $M_H/M_{H,0}$ as a function of redshift for central galaxies which cross the $10^{12}M_\odot$ halo mass threshold at z=2. The red line shows $M_H/M_{H,0}$ as described by Equation (5).}
+\label{fig:5}
+\end{figure}
 
 \noindent gives values for a \& b, averaged over halo masses, as $\bar a \approx 0.24, \bar b \approx 0.75$, but to test their fit for the evolution of EAGLE galaxies crossing the $10^{12}M_\odot$ halo mass threshold, $M_H/M_{H,0}$ is plotted against z in Fig.5 for EAGLE galaxies and for $m_H(z)$. Fig.5 shows that Equation (5) fits the evolution of halo mass with redshift well for EAGLE galaxies crossing the $10^{12}M_\odot$ halo mass threshold (outliers in Fig.5 that are significantly more massive than they are at z=0 are believed to be caused by halos passing through one another and contributing to each others' measured masses, before moving away at $z\approx0$, leading to  sudden decreases in the measured value of $M_H$). This means that the constant values of $\bar a$ and $\bar b$ can be substituted into Equation (4)
 
@@ -197,7 +195,7 @@ The median black hole mass on the left plot of Fig.3 reaches a high enough BH ma
 
 \noindent meaning that $dln(M_H)/dz$ and $dn/dln(M_H)$ are now functions of z only.\par
 
-The top plot of Fig.6 shows the mass function $dn/dln(M_H)$ for reference, and in the bottom plot, $dln(M_H)/dz$ and $dn/dln(M_H)$ are multiplied as in Equation (3) to produce a plot of the formation rate of galaxies of halo mass greater than $10^{12}M_\odot$, and hence the formation rate of quasars, $dn/dz$, as a function of redshift. The formation rate peaks at $z\approx1$ before decreasing for $1 \gtrsim z \geq 0$.
+The top plot of Fig.6 shows the comoving number density of halos with mass $10^{12}M_\odot$, $dn/dln(M_H)$, for reference, and in the bottom plot, $dln(M_H)/dz$ and $dn/dln(M_H)$ are multiplied as in Equation (3) to produce a plot of the formation rate of halos with mass greater than $10^{12}M_\odot$, and hence the formation rate of quasars, $dn/dz$, as a function of redshift. The formation rate peaks at $z\approx1$ before decreasing for $1 \gtrsim z \geq 0$.
 
 \onecolumngrid
 
@@ -210,7 +208,95 @@ The top plot of Fig.6 shows the mass function $dn/dln(M_H)$ for reference, and i
 \end{figure}
 \newpage
 \twocolumngrid
- 
+
+
+\section{Calculating Quasar Emissivity}
+
+This model now has a prediction for the formation rate of quasars, and the number density of quasars can be calculated from this, but these quantities are difficult to measure for the real universe. A measurable quantity which can also be calculated from this model is the quasar emissivity in a particular region of the EM spectrum, such as UV.\par
+
+To obtain an estimate for quasar emissivity, the number density of quasars must first be calculated from the formation rate, and this in turn requires an estimate of the lifetime of each quasar. This section discusses how the quasar emissivity can be calculated in two different cases.
+
+\subsection{Long Lifetime Case}
+
+The lifetimes of quasars are not very well understood. One possibility is that, since the black hole’s growth is driven by accreting material that falls into the centre of the halo, the quasar’s lifetime could be proportional to the dynamical timescale of the host halo.
+
+\begin{equation}
+    \tau\propto t_{dyn}=\frac{1}{\sqrt{G\rho}}
+\end{equation}
+
+\noindent This is the minimum time taken for a uniform gas cloud with density $\rho$ to collapse, and so would be approximately equal to the time taken for all the gas present in the halo at the start of the quasar phase to fall to the centre and drive the black hole’s accretion. By substituting $\Bar{\rho}_{halo}=200\Bar{\rho_{crit}}=200\frac{3H^2}{8\pi G}$ and rearranging, obtain
+
+\begin{equation}
+    t_{dyn}=\left(\frac{300}{4\pi}\right)^{-\frac{1}{2}}t_H
+\end{equation}
+
+\noindent where $t_H$ is the Hubble time. This leads to a final expression for the quasar lifetime
+
+\begin{equation}
+    \tau=k\left(\frac{300}{4\pi}\right)^{-\frac{1}{2}}t_H
+\end{equation}
+
+To calculate the number density of quasars, a "loss rate" is first produced by delaying the formation rate, $\frac{dn}{dt}=\frac{dn}{dz}\frac{dz}{dt}$, by the assumed quasar lifetime (see top plot of Fig.7). The quasar number density is then calculated by numerically integrating the formation rate with respect to time, then subtracting the numerical integral of the loss rate
+
+\begin{equation}
+    n(t)=\int_{t_0}^t\frac{dn}{dt'}dt'-\int_{\tau(t=t_0)}^tl(t')dt'
+\end{equation}
+
+\noindent where $l(t)$ is the quasar loss rate and $\tau(t=t_0)$ is the assumed quasar lifetime at $t=t_0$. Ideally, $t_0$ would be zero, but this corresponds to $z=\infty$ and would be unsuitable for calculations using COLOSSUS, so $t_0$ is instead chosen to be a finite cosmic time reasonably close to zero. The comoving quasar number density calculated using this method can be seen in the middle plot of Fig.7.\par
+
+Another quantity required to calculate the quasar emissivity is the total amount of energy radiated by a quasar during its lifetime. This can be calculated using
+
+\begin{equation}
+    E=\eta M_{BH,final}c^2
+\end{equation}
+
+\noindent where $\eta$ is the efficiency at which accreted mass is converted to radiation, assumed here to be 0.1, and $M_{BH,final}$ is the final mass reached by the quasar. Because of the difficulties associated with measuring the masses of quasars, the final black hole mass is simply estimated to be $10^{8.5}M_\odot$, but this final mass will be investigated further later in the report.\par
+
+Now that expressions have been obtained for the quasar number density, lifetime, and the total energy released by each quasar, the comoving quasar emissivity can be calculated using
+
+\begin{equation}
+    \varepsilon=n\frac{E}{\tau}
+\end{equation}
+
+\subsection{Short Lifetime Case}
+
+In the case where quasar lifetimes are small on the scale over which the formation rate varies, the comoving number density of quasars can be approximated as
+
+\begin{equation}
+    n\approx\frac{dn}{dt}\tau
+\end{equation}
+
+\noindent By substituting Equation (13) into Equation (12), obtain
+
+\begin{equation}
+    \varepsilon\approx\frac{dn}{dt}E
+\end{equation}
+
+\noindent so the emissivity can be calculated without first obtaining the number density in this case, and is directly proportional to the quasar formation rate.
+
+\subsection{Quasar Emissivity at 912\AA}
+
+In \cite{Haardt_Madau}, the function
+
+\begin{multline}
+    \frac{\epsilon_{912}(z)}{(1+z)^3}=(10^{24.6}erg s^{-1}Mpc^{-3}Hz^{-1})\\
+    \times(1+z)^{4.68}\frac{exp(-0.28z)}{exp(1.77z)+26.3}
+\end{multline}
+
+\noindent is used to calculate the comoving quasar emissivity at the frequency corresponding to a wavelength of 912\AA, this also corresponds to an energy of 1ryd - the ionisation energy of hydrogen. The evolution of emissivity with redshift can be directly compared between this formula and the model produced in this project, this is shown in the bottom plot of Fig.7.
+
+\onecolumngrid
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=8.5cm]{Plot_7.jpeg}
+\caption{Top: Formation rate and loss rate of quasars as a function of redshift. The threshold halo mass for quasar formation is assumed here to have a constant value of $10^{12}M_\odot$. Middle: Comoving number density of quasars as a function of redshift, calculated using Equation (10). Bottom: Comoving quasar emissivity as a function of redshift. The blue line shows the emissivity produced from this model using equation (12), and the orange line shows the emissivity at 912\AA calculated by \cite{Haardt_Madau} (Equation(15)).}
+\label{fig:7}
+\end{figure}
+\newpage
+\twocolumngrid
+
 
 \section{Conclusions}
 
@@ -218,7 +304,7 @@ The formation rate of quasars as a function of redshift has been calculated from
 
 If the duration of the quasar phase after formation can be determined, the number of quasars present in the universe at a given redshift can be estimated. This has applications in developing a model for quasar evolution.
 
-\bibliographystyle{mn2e.bst}  % {unsrtnat}
+\bibliographystyle{mn2e.bst} % {unsrtnat}
 \bibliography{citation.bib}
 
 \end{document}
