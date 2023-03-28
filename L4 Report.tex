@@ -112,7 +112,7 @@ The top plot of Fig.2 shows the relationship between u-r magnitude, which shows 
 \noindent However, for galaxies more massive than a critical mass scale (\cite{Quasar}),
 
 \begin{equation}
-    M_{crit}\sim10^{12}\Delta_{z}^{-\frac{3}{8}}M_\odot
+    M_{H,crit}\sim10^{12}\Delta_{z}^{-\frac{3}{8}}M_\odot
 \end{equation}
 
 \noindent where,
@@ -125,7 +125,7 @@ The top plot of Fig.2 shows the relationship between u-r magnitude, which shows 
 
 \noindent the colour of the points in Fig.3, as this shows a decrease in sSFR for galaxies with high BH mass and halo mass. The lower histogram of Fig.2 shows the difference in the ratio between BH mass and stellar mass for galaxies in the blue cloud and the red sequence. The histogram peaks at a higher value for the red sequence than for the blue cloud, implying that red sequence galaxies, on average, have a more massive BH compared to the mass of the host galaxy than for blue cloud galaxies. This provides further evidence that AGN feedback is responsible for the low star formation in the red sequence, as AGN are typically more massive than inactive SMBH's due to their high accretion rate.\par
 
-Since the presence of an AGN is believed to be the cause of galaxies making the transition from the blue cloud to the red sequence, measuring the number of galaxies which exceed $M_{crit}$ and therefore transition to the red sequence at a given redshift will also provide a measurement of the number of quasars formed at that redshift. This provides the motivation for this model, and is discussed further in the next section.
+Since the presence of an AGN is believed to be the cause of galaxies making the transition from the blue cloud to the red sequence, measuring the number of galaxies which exceed $M_{crit}$ and therefore transition to the red sequence at a given redshift will also provide a measurement of the number of quasars formed at that redshift. This provides the motivation for our model, and is discussed further in the next section.
 
 \section{Relating Halo Mass to the Formation Rate of Quasars}
 \subsection{The Black Hole Mass - Halo Mass Relation}
@@ -150,7 +150,7 @@ The right plot of Fig.3 shows that black hole mass follows an exponential fit fo
 
  \subsection{Calculating the Quasar Formation Rate}
 
-The median black hole mass on the left plot of Fig.3 reaches a high enough BH mass for a luminous AGN at a halo mass of $\sim10^{12}M_\odot$. This model assumes that the rate at which quasars are formed in EAGLE is equal to the rate at which galaxies cross the $10^{12}M_\odot$ halo 
+The median black hole mass on the left plot of Fig.3 reaches a high enough BH mass for a luminous AGN at a halo mass of $\sim10^{12}M_\odot$. Our model assumes that the rate at which quasars are formed in EAGLE is equal to the rate at which galaxies cross the $10^{12}M_\odot$ halo 
 
 \begin{figure}[H]
 \centering
@@ -212,9 +212,9 @@ The top plot of Fig.6 shows the comoving number density of halos with mass $10^{
 
 \section{Calculating Quasar Emissivity}
 
-This model now has a prediction for the formation rate of quasars, and the number density of quasars can be calculated from this, but these quantities are difficult to measure for the real universe. A measurable quantity which can also be calculated from this model is the quasar emissivity in a particular region of the EM spectrum, such as UV.\par
+Our model now has a prediction for the formation rate of quasars, and the number density of quasars can be calculated from this, but these quantities are difficult to measure for the real universe. A measurable quantity which can also be calculated from this model is the quasar emissivity in a particular region of the EM spectrum, such as UV.\par
 
-To obtain an estimate for quasar emissivity, the number density of quasars must first be calculated from the formation rate, and this in turn requires an estimate of the lifetime of each quasar. This section discusses how the quasar emissivity can be calculated in two different cases.
+To obtain an estimate for quasar emissivity, the number density of quasars must first be calculated from the formation rate, and this in turn requires an estimate of the lifetime of each quasar. This section discusses how the quasar emissivity can be calculated in two different cases, and then compares the results of these methods with quasar emissivity calculated by \cite{Haardt_Madau}.
 
 \subsection{Long Lifetime Case}
 
@@ -236,13 +236,15 @@ The lifetimes of quasars are not very well understood. One possibility is that, 
     \tau=k\left(\frac{300}{4\pi}\right)^{-\frac{1}{2}}t_H
 \end{equation}
 
-To calculate the number density of quasars, a "loss rate" is first produced by delaying the formation rate, $\frac{dn}{dt}=\frac{dn}{dz}\frac{dz}{dt}$, by the assumed quasar lifetime (see top plot of Fig.7). The quasar number density is then calculated by numerically integrating the formation rate with respect to time, then subtracting the numerical integral of the loss rate
+\noindent where k is a proportionality constant.\par
+
+To calculate the number density of quasars, a "loss rate" is first produced by delaying the formation rate, $\frac{dn}{dt}=\frac{dn}{dz}\frac{dz}{dt}$, by the assumed quasar lifetime (see left plot of Fig.7). The quasar number density is then calculated by numerically integrating the formation rate with respect to time, then subtracting the numerical integral of the loss rate
 
 \begin{equation}
     n(t)=\int_{t_0}^t\frac{dn}{dt'}dt'-\int_{\tau(t=t_0)}^tl(t')dt'
 \end{equation}
 
-\noindent where $l(t)$ is the quasar loss rate and $\tau(t=t_0)$ is the assumed quasar lifetime at $t=t_0$. Ideally, $t_0$ would be zero, but this corresponds to $z=\infty$ and would be unsuitable for calculations using COLOSSUS, so $t_0$ is instead chosen to be a finite cosmic time reasonably close to zero. The comoving quasar number density calculated using this method can be seen in the middle plot of Fig.7.\par
+\noindent where $l(t)$ is the quasar loss rate and $\tau(t=t_0)$ is the assumed quasar lifetime at $t=t_0$. Ideally, $t_0$ would be zero, but this corresponds to $z=\infty$ and would be unsuitable for calculations using COLOSSUS, so $t_0$ is instead chosen to be a finite cosmic time reasonably close to zero. The comoving quasar number density calculated using this method can be seen in the right plot of Fig.7.\par
 
 Another quantity required to calculate the quasar emissivity is the total amount of energy radiated by a quasar during its lifetime. This can be calculated using
 
@@ -250,7 +252,7 @@ Another quantity required to calculate the quasar emissivity is the total amount
     E=\eta M_{BH,final}c^2
 \end{equation}
 
-\noindent where $\eta$ is the efficiency at which accreted mass is converted to radiation, assumed here to be 0.1, and $M_{BH,final}$ is the final mass reached by the quasar. Because of the difficulties associated with measuring the masses of quasars, the final black hole mass is simply estimated to be $10^{8.5}M_\odot$, but this final mass will be investigated further later in the report.\par
+\noindent where $\eta$ is the efficiency at which accreted mass is converted to radiation, assumed here to be 0.1, and $M_{BH,final}$ is the final mass reached by the quasar. Because of the difficulties associated with measuring the masses of quasars, the final black hole mass is simply estimated to be $10^{8.5}M_\odot$, but this final mass will be investigated further in section 5.\par
 
 Now that expressions have been obtained for the quasar number density, lifetime, and the total energy released by each quasar, the comoving quasar emissivity can be calculated using
 
@@ -283,28 +285,98 @@ In \cite{Haardt_Madau}, the function
     \times(1+z)^{4.68}\frac{exp(-0.28z)}{exp(1.77z)+26.3}
 \end{multline}
 
-\noindent is used to calculate the comoving quasar emissivity at the frequency corresponding to a wavelength of 912\AA, this also corresponds to an energy of 1ryd - the ionisation energy of hydrogen. The evolution of emissivity with redshift can be directly compared between this formula and the model produced in this project, this is shown in the bottom plot of Fig.7.
+\noindent is used to calculate the comoving quasar emissivity at the frequency corresponding to a wavelength of 912\AA, this also corresponds to an energy of 1ryd - the ionisation energy of hydrogen. The evolution of emissivity with redshift can be directly compared between this formula and our model. This is shown in Fig.8, where it can be seen that the evolution of the emissivity produced using our model appears to be a good fit for the evolution of the emissivity at 912\AA \: calculated by \cite{Haardt_Madau} between redshifts $2\lesssim z\lesssim6$. Additionally, the emissivities peak at the same redshift. The only major deviation from the prediction of \citeauthor{Haardt_Madau} occurs at $z\lesssim2$.\par
+
+The quasar emissivity at 912\AA \: has an extra unit of $Hz^{-1}$ which prevents the magnitude of the emissivity from being compared with our model's prediction at a given redshift. To make this comparison, it is necessary to convert the frequency dependent emissivity at 912\AA \: to a bolometric emissivity. However, the emission spectra of quasars are complicated (see \cite{QSO_Spectrum} for examples), so the conversion will be simpler if only UV is considered. In this case, the quasar UV emissivity can be approximated from the emissivity at 912\AA \: using
+
+\begin{equation}
+    \varepsilon_{UV,HM}=\int_{\nu_{912}}^{\infty}\epsilon_\nu d\nu
+\end{equation}
+
+\noindent Evaluating this integral gives
+
+\begin{equation}
+    \varepsilon_{UV,HM}=\frac{100}{57}\nu_{912}\epsilon_{912}
+\end{equation}
+
+For comparison, the emissivity calculated by our model must also be modified by introducing a factor $\eta_{UV}$ into Equation (11)
+
+\begin{equation}
+    E_{UV}=\eta_{UV}M_{BH,final}\eta c^2=\zeta\eta c^2
+\end{equation}
+
+\noindent where $\eta_{UV}$ is the fraction of energy released by the quasar in UV and $\zeta=\eta_{UV}M_{BH}$. Substituting this into Equation (12) gives our model's prediction for the quasar UV emissivity
+
+\begin{equation}
+    \varepsilon_{UV,Model}=n\frac{E_{UV}}{\tau}
+\end{equation}
+
+These emissivities are compared in Fig.9, where the model uses the values $M_{BH,final}=10^{8.5}M_\odot$ and $\eta_{UV}=0.5$. Our model's prediction for the emissivity is greater than the Haardt-Madau emissivity by approximately
+
+\clearpage
 
 \onecolumngrid
 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=8.5cm]{Plot_7.jpeg}
-\caption{Top: Formation rate and loss rate of quasars as a function of redshift. The threshold halo mass for quasar formation is assumed here to have a constant value of $10^{12}M_\odot$. Middle: Comoving number density of quasars as a function of redshift, calculated using Equation (10). Bottom: Comoving quasar emissivity as a function of redshift. The blue line shows the emissivity produced from this model using equation (12), and the orange line shows the emissivity at 912\AA calculated by \cite{Haardt_Madau} (Equation(15)).}
+\includegraphics[width=\linewidth]{Plot_7a.jpeg}
+\caption{Left: Formation rate and loss rate of quasars as a function of redshift. The threshold halo mass for quasar formation is assumed here to have a constant value of $10^{12}M_\odot$. Right: Comoving number density of quasars as a function of redshift, calculated using Equation (10).}
 \label{fig:7}
 \end{figure}
-\newpage
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{Plot_7b.jpeg}
+\caption{Comoving quasar emissivity as a function of redshift. The blue line shows the emissivity produced from our model using equation (12), and the orange line shows the emissivity at 912\AA \: calculated by \cite{Haardt_Madau} (Equation(15)). The emissivities peak at the same redshift and the model appears to be a good fit for the emissivity predicted by \citeauthor{Haardt_Madau} for $2\lesssim z\lesssim6$.}
+\label{fig:8}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{Plot_8.jpeg}
+\caption{Comoving quasar UV emissivity as a function of redshift. The blue line shows emissivity calculated using Equation (19) and the orange line shows emissivity calculated from $\epsilon_{912}$ using Equation (17).}
+\label{fig:9}
+\end{figure}
+
 \twocolumngrid
 
 
-\section{Conclusions}
+ \noindent 1 order of magnitude. This difference could be due to the model's assumption that all halos which grow to masses higher than $10^12M_\odot$ will host quasars, which is obviously not true in reality, as the Milky Way and similar galaxies have halo masses $\geq10^{12}M_\odot$ and do not host quasars.\par
 
-The formation rate of quasars as a function of redshift has been calculated from the mass function of galaxies in the EAGLE Ref-L0100N1504 simulation which have crossed the mass threshold necessary to make the transition from the blue cloud to the red sequence and the logarithmic growth rate of galactic halos described by Correa et al. (2015). The quasar formation rate appears to peak at $z\approx1$.\par
+Currently, our model assumes that the critical mass above which halos will host quasars, $M{H,crit}$, is constant, but this assumption may not be true. In the next section, we introduce two alternative models which include a redshift-dependent $M_{H,crit}$.
 
-If the duration of the quasar phase after formation can be determined, the number of quasars present in the universe at a given redshift can be estimated. This has applications in developing a model for quasar evolution.
+\section{Models with Variable Critical Mass}
+\subsection{Keeping Virial Velocity Constant}
 
-\bibliographystyle{mn2e.bst} % {unsrtnat}
+The virial velocity of a halo is related to its mass by (\cite{Ikea})
+
+\begin{equation}
+    v_H^2=\alpha(GM_H)^{\frac{2}{3}}(10H)^{\frac{2}{3}}
+\end{equation}
+
+\noindent where $\alpha=\frac{3}{5}$. Rearranging this and setting $v_H=v_{H,0}=constant$ gives
+
+\begin{equation}
+    M_{H,crit}(z)=\frac{v_{H,0}^3}{10G\alpha^{\frac{3}{2}}}\frac{1}{H(z)}
+\end{equation}
+
+\noindent so $M{H,crit}$ decreases with redshift. Fig.10 shows...
+
+ %The results shown so far have been produced using assumed values for $M{H,crit}$, $M_{BH,final}$, $\eta_{UV}$, and $k$ (the proportionality constant in Equation (9)) which are simple estimates. In the next section, we will investigate the effect of varying the values of $M{H,crit}$ and $k$ on the resulting emissivity, and determine values for $\zeta=\eta_{UV}M_{BH,final}$ which produce a good fit for the emissivity calculated from \citeauthor{Haardt_Madau}.
+
+ %\section{Investigating the Effects of Changing Parameters}
+ %\subsection{Varying $k$ and $M_{H,crit}$}
+
+ %Hi.
+
+%\section{Conclusions}
+
+%The formation rate of quasars as a function of redshift has been calculated from the mass function of galaxies in the EAGLE Ref-L0100N1504 simulation which have crossed the mass threshold necessary to make the transition from the blue cloud to the red sequence and the logarithmic growth rate of galactic halos described by Correa et al. (2015). The quasar formation rate appears to peak at $z\approx1$.\par
+
+%If the duration of the quasar phase after formation can be determined, the number of quasars present in the universe at a given redshift can be estimated. This has applications in developing a model for quasar evolution.
+
+\bibliographystyle{mn2e.bst}
 \bibliography{citation.bib}
 
 \end{document}
