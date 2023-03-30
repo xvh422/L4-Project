@@ -109,23 +109,13 @@ The top plot of Fig.2 shows the relationship between u-r magnitude, which shows 
 \end{figure}
 \twocolumngrid
 
-\noindent However, for galaxies more massive than a critical mass scale (\cite{Quasar}),
+\noindent However, for galaxies with dark matter halos more massive than a critical mass of $M_{H,crit}\sim10^{12}M_\odot$ outflows driven by supernovae will no longer be buoyant, leading to a buildup of gas in the central regions of the galaxy. This allows the central black hole to grow rapidly, quickly reaching sufficient mass to begin AGN feedback, in which energy released by the black hole heats the gas corona surrounding the galaxy, disrupting the inflow of cold gas and suppressing star formation. More evidence of this can be seen from the colour of the points in Fig.3, as this shows a decrease in sSFR for galaxies with high BH mass and halo mass. The lower histogram of Fig.2 shows the difference in the ratio between BH mass and stellar mass for galaxies in the blue cloud and the red sequence. The histogram peaks at a higher value for the red sequence than for the blue cloud, implying that red sequence galaxies, on average, have a more massive BH compared to the mass of the host galaxy than for blue cloud galaxies. This provides further evidence that AGN feedback is responsible for the low star formation in the red sequence, as AGN are typically more massive than inactive SMBH's due to their high accretion rate.\par
 
-\begin{equation}
-    M_{H,crit}\sim10^{12}\Delta_{z}^{-\frac{3}{8}}M_\odot
-\end{equation}
-
-\noindent where,
-
-\begin{equation}
-    \Delta_z\equiv(\Omega_m(1+z)^3+\Omega_\Lambda)^{\frac{1}{3}}
-\end{equation}
-
-\noindent outflows driven by supernovae will no longer be buoyant, leading to a buildup of gas in the central regions of the galaxy. This allows the central BH to grow rapidly, quickly reaching sufficient mass to begin AGN feedback, in which energy released by the BH heats the gas corona surrounding the galaxy, disrupting the inflow of cold gas and suppressing star formation. More evidence of this can be seen from
-
-\noindent the colour of the points in Fig.3, as this shows a decrease in sSFR for galaxies with high BH mass and halo mass. The lower histogram of Fig.2 shows the difference in the ratio between BH mass and stellar mass for galaxies in the blue cloud and the red sequence. The histogram peaks at a higher value for the red sequence than for the blue cloud, implying that red sequence galaxies, on average, have a more massive BH compared to the mass of the host galaxy than for blue cloud galaxies. This provides further evidence that AGN feedback is responsible for the low star formation in the red sequence, as AGN are typically more massive than inactive SMBH's due to their high accretion rate.\par
+\vspace*{1cm}
 
 Since the presence of an AGN is believed to be the cause of galaxies making the transition from the blue cloud to the red sequence, measuring the number of galaxies which exceed $M_{crit}$ and therefore transition to the red sequence at a given redshift will also provide a measurement of the number of quasars formed at that redshift. This provides the motivation for our model, and is discussed further in the next section.
+
+\vspace*{2cm}
 
 \section{Relating Halo Mass to the Formation Rate of Quasars}
 \subsection{The Black Hole Mass - Halo Mass Relation}
@@ -183,11 +173,11 @@ mass threshold: $dn/dz$, where n is the number of galaxies of halo mass greater 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{Plot_5.jpeg}
-\caption{The black lines show $M_H/M_{H,0}$ as a function of redshift for central galaxies which cross the $10^{12}M_\odot$ halo mass threshold at z=2. The red line shows $M_H/M_{H,0}$ as described by Equation (5).}
+\caption{The black lines show $M_H/M_{H,0}$ as a function of redshift for central galaxies which cross the $10^{12}M_\odot$ halo mass threshold at z=2. The red line shows $M_H/M_{H,0}$ as described by Equation (3).}
 \label{fig:5}
 \end{figure}
 
-\noindent gives values for a \& b, averaged over halo masses, as $\bar a \approx 0.24, \bar b \approx 0.75$, but to test their fit for the evolution of EAGLE galaxies crossing the $10^{12}M_\odot$ halo mass threshold, $M_H/M_{H,0}$ is plotted against z in Fig.5 for EAGLE galaxies and for $m_H(z)$. Fig.5 shows that Equation (5) fits the evolution of halo mass with redshift well for EAGLE galaxies crossing the $10^{12}M_\odot$ halo mass threshold (outliers in Fig.5 that are significantly more massive than they are at z=0 are believed to be caused by halos passing through one another and contributing to each others' measured masses, before moving away at $z\approx0$, leading to  sudden decreases in the measured value of $M_H$). This means that the constant values of $\bar a$ and $\bar b$ can be substituted into Equation (4)
+\noindent gives values for a \& b, averaged over halo masses, as $\bar a \approx 0.24, \bar b \approx 0.75$, but to test their fit for the evolution of EAGLE galaxies crossing the $10^{12}M_\odot$ halo mass threshold, $M_H/M_{H,0}$ is plotted against z in Fig.5 for EAGLE galaxies and for $m_H(z)$. Fig.5 shows that Equation (3) fits the evolution of halo mass with redshift well for EAGLE galaxies crossing the $10^{12}M_\odot$ halo mass threshold (outliers in Fig.5 that are significantly more massive than they are at z=0 are believed to be caused by halos passing through one another and contributing to each others' measured masses, before moving away at $z\approx0$, leading to  sudden decreases in the measured value of $M_H$). This means that the constant values of $\bar a$ and $\bar b$ can be substituted into Equation (2)
 
 \begin{equation}
     \frac{dln(M_H)}{dz}=\frac{\bar a}{(1+z)}-\bar b
@@ -195,7 +185,7 @@ mass threshold: $dn/dz$, where n is the number of galaxies of halo mass greater 
 
 \noindent meaning that $dln(M_H)/dz$ and $dn/dln(M_H)$ are now functions of z only.\par
 
-The top plot of Fig.6 shows the comoving number density of halos with mass $10^{12}M_\odot$, $dn/dln(M_H)$, for reference, and in the bottom plot, $dln(M_H)/dz$ and $dn/dln(M_H)$ are multiplied as in Equation (3) to produce a plot of the formation rate of halos with mass greater than $10^{12}M_\odot$, and hence the formation rate of quasars, $dn/dz$, as a function of redshift. The formation rate peaks at $z\approx1$ before decreasing for $1 \gtrsim z \geq 0$.
+The top plot of Fig.6 shows the comoving number density of halos with mass $10^{12}M_\odot$, $dn/dln(M_H)$, for reference, and in the bottom plot, $dln(M_H)/dz$ and $dn/dln(M_H)$ are multiplied as in Equation (1) to produce a plot of the formation rate of halos with mass greater than $10^{12}M_\odot$, and hence the formation rate of quasars, $dn/dz$, as a function of redshift. The formation rate peaks at $z\approx1$ before decreasing for $1 \gtrsim z \geq 0$.
 
 \onecolumngrid
 
@@ -203,7 +193,7 @@ The top plot of Fig.6 shows the comoving number density of halos with mass $10^{
 \begin{figure}[H]
 \centering
 \includegraphics[width=12.5cm]{Plot_6.jpeg}
-\caption{Top: Comoving number density of halos with mass $10^{12}M_\odot$ as a function of redshift, produced using COLOSSUS. Bottom: Formation rate of halos of mass greater than $10^{12}M_\odot$ as a function of redshift, calculated using Equation (4). This appears to peak at $z\approx1$.}
+\caption{Top: Comoving number density of halos with mass $10^{12}M_\odot$ as a function of redshift, produced using COLOSSUS. Bottom: Formation rate of halos of mass greater than $10^{12}M_\odot$ as a function of redshift, calculated using Equation (2). This appears to peak at $z\approx1$.}
 \label{fig:6}
 \end{figure}
 \newpage
@@ -252,7 +242,7 @@ Another quantity required to calculate the quasar emissivity is the total amount
     E=\eta M_{BH,final}c^2
 \end{equation}
 
-\noindent where $\eta$ is the efficiency at which accreted mass is converted to radiation, assumed here to be 0.1, and $M_{BH,final}$ is the final mass reached by the quasar. Because of the difficulties associated with measuring the masses of quasars, the final black hole mass is simply estimated to be $10^{8.5}M_\odot$, but this final mass will be investigated further in section 5.\par
+\noindent where $\eta$ is the efficiency at which accreted mass is converted to radiation, assumed here to be 0.1, and $M_{BH,final}$ is the final mass reached by the quasar. Because of the difficulties associated with measuring the masses of quasars, the final black hole mass is simply estimated to be $10^{8.5}M_\odot$, but this final mass will be investigated further in section 6.\par
 
 Now that expressions have been obtained for the quasar number density, lifetime, and the total energy released by each quasar, the comoving quasar emissivity can be calculated using
 
@@ -268,7 +258,7 @@ In the case where quasar lifetimes are small on the scale over which the formati
     n\approx\frac{dn}{dt}\tau
 \end{equation}
 
-\noindent By substituting Equation (13) into Equation (12), obtain
+\noindent By substituting Equation (11) into Equation (10), obtain
 
 \begin{equation}
     \varepsilon\approx\frac{dn}{dt}E
@@ -299,13 +289,13 @@ The quasar emissivity at 912\AA \: has an extra unit of $Hz^{-1}$ which prevents
     \varepsilon_{UV,HM}=\frac{100}{57}\nu_{912}\epsilon_{912}
 \end{equation}
 
-For comparison, the emissivity calculated by our model must also be modified by introducing a factor $\eta_{UV}$ into Equation (11)
+For comparison, the emissivity calculated by our model must also be modified by introducing a factor $\eta_{UV}$ into Equation (9)
 
 \begin{equation}
     E_{UV}=\eta_{UV}M_{BH,final}\eta c^2=\zeta\eta c^2
 \end{equation}
 
-\noindent where $\eta_{UV}$ is the fraction of energy released by the quasar in UV and $\zeta=\eta_{UV}M_{BH}$. Substituting this into Equation (12) gives our model's prediction for the quasar UV emissivity
+\noindent where $\eta_{UV}$ is the fraction of energy released by the quasar in UV and $\zeta=\eta_{UV}M_{BH}$. Substituting this into Equation (10) gives our model's prediction for the quasar UV emissivity
 
 \begin{equation}
     \varepsilon_{UV,Model}=n\frac{E_{UV}}{\tau}
@@ -321,30 +311,32 @@ These emissivities are compared in Fig.9, where the model uses the values $M_{BH
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{Plot_7_2.jpeg}
-\caption{Left: Formation rate and loss rate of quasars as a function of redshift. The threshold halo mass for quasar formation is assumed here to have a constant value of $10^{12}M_\odot$. Right: Comoving number density of quasars as a function of redshift, calculated using Equation (10).}
+\caption{Left: Formation rate and loss rate of quasars as a function of redshift. The threshold halo mass for quasar formation is assumed here to have a constant value of $10^{12}M_\odot$. Right: Comoving number density of quasars as a function of redshift, calculated using Equation (8).}
 \label{fig:7}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=12cm]{Plot_7_3.jpeg}
-\caption{Comoving quasar emissivity as a function of redshift. The blue line shows the emissivity produced from our model using equation (12), and the orange line shows the emissivity at 912\AA \: calculated by \cite{Haardt_Madau} (Equation(15)). The emissivities peak at the same redshift and the model appears to be a good fit for the emissivity predicted by \citeauthor{Haardt_Madau} for $2\lesssim z\lesssim6$.}
+\caption{Comoving quasar emissivity as a function of redshift. The blue line shows the emissivity produced from our model using equation (10), and the orange line shows the emissivity at 912\AA \: calculated by \cite{Haardt_Madau} (Equation (13)). The emissivities peak at the same redshift and the model appears to be a good fit for the emissivity predicted by \citeauthor{Haardt_Madau} for $2\lesssim z\lesssim6$.}
 \label{fig:8}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=12cm]{Plot_8.jpeg}
-\caption{Comoving quasar UV emissivity as a function of redshift. The blue line shows emissivity calculated using Equation (19) and the orange line shows emissivity calculated from $\epsilon_{912}$ using Equation (17).}
+\caption{Comoving quasar UV emissivity as a function of redshift. The blue line shows emissivity calculated using Equation (17) and the orange line shows emissivity calculated from $\epsilon_{912}$ using Equation (15). The emissivity produced by our model is greater than $\varepsilon_{UV,HM}$ in this case.}
 \label{fig:9}
 \end{figure}
 
 \twocolumngrid
 
 
- \noindent 1 order of magnitude. This difference could be due to the model's assumption that all halos which grow to masses higher than $10^12M_\odot$ will host quasars, which is obviously not true in reality, as the Milky Way and similar galaxies have halo masses $\geq10^{12}M_\odot$ and do not host quasars.\par
+ \noindent 1 order of magnitude. This difference could be due to the model's assumption that all halos which grow to masses higher than $10^12M_\odot$ will host quasars, which is obviously not true in reality, as the Milky Way and similar galaxies have halo masses $\geq10^{12}M_\odot$ and do not host quasars. Another potential reason for the difference is that the estimated values of $M_{BH,final}$ and $\eta_{UV}$ could be too large.\par
 
 Currently, our model assumes that the critical mass above which halos will host quasars, $M{H,crit}$, is constant, but this assumption may not be true. In the next section, we introduce two alternative models which include a redshift-dependent $M_{H,crit}$.
+
+\vspace*{1cm}
 
 \section{Models with Variable Critical Mass}
 \subsection{Keeping Virial Velocity Constant}
@@ -361,22 +353,57 @@ The virial velocity of a halo is related to its mass by (\cite{Ikea})
     M_{H,crit}(z)=\frac{v_{H,0}^3}{10G\alpha^{\frac{3}{2}}}\frac{1}{H(z)}
 \end{equation}
 
-\noindent so $M{H,crit}$ decreases with redshift. Fig.10 shows...
-
 \onecolumngrid
 
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{Plot_10_2.jpeg}
-\caption{UwU}
+\caption{Left: Comoving number density of quasars as a function of redshift, calculated using our model in the case of constant virial velocity. The number density is ~1 order of magnitude less than in the constant $M_{H,crit}$ case. Right: Comoving quasar UV emissivity as a function of redshift. The blue line shows emissivity calculated from the number density on the left using Equation (17). The orange line shows emissivity calculated from $\epsilon_{912}$ using Equation (15). This model appears to have a similar fit for the evolution of the Haardt-Madau emissivity, but the magnitude of the emissivity is lower than $\varepsilon_{UV,HM}$ for this model.}
 \label{fig:10}
 \end{figure}
 
 \twocolumngrid
 
 
- %The results shown so far have been produced using assumed values for $M{H,crit}$, $M_{BH,final}$, $\eta_{UV}$, and $k$ (the proportionality constant in Equation (9)) which are simple estimates. In the next section, we will investigate the effect of varying the values of $M{H,crit}$ and $k$ on the resulting emissivity, and determine values for $\zeta=\eta_{UV}M_{BH,final}$ which produce a good fit for the emissivity calculated from \citeauthor{Haardt_Madau}.
+\noindent so $M{H,crit}$ decreases with redshift.\par
+
+Fig.10 shows that this model produces both lower number densities of quasars and lower UV emissivities. This is most likely because the constant virial velocity required to produce a good fit with $\varepsilon_{UV,HM}$ is $~300kms^{-1}$, which corresponds to a critical halo mass of $10^{13.3}M_\odot$ at $z=0$. This mass is significantly greater than the constant value used previously, and results in fewer halos crossing the mass threshold and forming quasars, which leads to the reduced magnitude of the emissivity.
+
+\subsection{Star Formation-Driven Outflows}
+
+In \cite{Quasar}, the buoyancy of outflows of gas from the galaxy driven by star formation is found to be dependent on the mass of the host halo. By comparing the 'adiabat' of the outflow to that of the host galaxy's diffuse corona, the critical halo mass, above which outflows would no longer be buoyant, is
+
+\begin{equation}
+    M_{H,crit}\sim10^{12}\Delta_z^{-\frac{3}{8}}
+\end{equation}
+
+\noindent where
+
+\begin{equation}
+    \Delta_z\equiv(\Omega_m(1+z)^3+\Omega_\Lambda)^{\frac{1}{3}}
+\end{equation}
+
+\noindent Above this critical halo mass, the outflows are trapped by the corona. Gas then builds up in the central regions of the galaxy, allowing the SMBH to begin growing rapidly. As in section 5.1, this leads to a critical halo mass which decreases with redshift.\par
+
+Words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words words 
+
+\onecolumngrid
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{Plot_13_2.jpeg}
+\caption{Left: Comoving number density of quasars as a function of redshift, calculated using our model in the case where rapid BH growth is assumed to begin when star formation-driven outflows are no longer buoyant. Right: Comoving quasar UV emissivity as a function of redshift. The blue line shows emissivity calculated from the number density on the left using Equation (17). The orange line shows emissivity calculated from $\epsilon_{912}$ using Equation (15).}
+\label{fig:11}
+\end{figure}
+
+\twocolumngrid
+
+
+Hoot.
+
+ %The results shown so far have been produced using assumed values for $M{H,crit}$, $M_{BH,final}$, $\eta_{UV}$, and $k$ (the proportionality constant in Equation (7)) which are simple estimates. In the next section, we will investigate the effect of varying the values of $M{H,crit}$ and $k$ on the resulting emissivity, and determine values for $\zeta=\eta_{UV}M_{BH,final}$ which produce a good fit for the emissivity calculated from \citeauthor{Haardt_Madau}.
 
  %\section{Investigating the Effects of Changing Parameters}
  %\subsection{Varying $k$ and $M_{H,crit}$}
