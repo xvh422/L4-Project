@@ -338,7 +338,7 @@ In the case where quasar lifetimes are small on the scale over which the formati
 
 \noindent so the emissivity can be calculated without first obtaining the number density in this case, and is directly proportional to the quasar formation rate.\par
 
-Comparing the plots in Fig.10 of quasar number density and UV emissivity produced using the short lifetime model with the initial model used in section 4 shows that this model's predictions are closer to the initial model than either of the models described in section 5.2. This model also appears to produce a similarly good fit for $\varepsilon_{UV,HM}$ to the initial model.
+Comparing the plots in Fig.10 of quasar number density and UV emissivity produced using the short lifetime model with the initial model used in section 4 shows that the quasar UV emissivity produced by this model is closer to the initial model than either of the models described in section 5.2, this model also appears to produce a similarly good fit for $\varepsilon_{UV,HM}$ to the initial model. However, the quasar number density produced by this model is by far the lowest of any of the models shown in Fig.10. Quasars are assumed to release the same amount of energy during their lifetimes in all of these models, so short quasar lifetimes mean that the average luminosity of each quasar must be much greater. This cancels out the lower number density and leads to a similar magnitude for UV Emissivity to the initial model.
 
 \subsection{Models with Variable Critical Mass}
 \subsubsection{Keeping Virial Velocity Constant}
@@ -357,7 +357,22 @@ This model investigates the possibility that halos form quasars above a constant
 
 \noindent so $M{H,crit}$ decreases with redshift.\par
 
-By comparing the plots from this model with the initial model in Fig.10, we see that this model produces significantly lower number densities of quasars and significantly lower UV emissivities than the initial model, with both being lower by approximately 1 order of magnitude. This is most likely because the constant virial velocity required to produce a good fit with $\varepsilon_{UV,HM}$ is $~300kms^{-1}$, which corresponds to a critical halo mass of $10^{13.3}M_\odot$ at $z=0$. This mass is significantly greater than the constant value used previously, and results in fewer halos crossing the mass threshold and forming quasars, which leads to the reduced magnitude of the emissivity.
+By comparing the plots from this model with the initial model in Fig.10, we see that this model produces significantly lower number densities of quasars and significantly lower UV emissivities than the initial model, with both being lower by approximately 1 order of magnitude. This is most likely because the constant virial velocity required to produce a good fit with $\varepsilon_{UV,HM}$ is $~300kms^{-1}$, which corresponds to a critical halo mass of $10^{13.3}M_\odot$ at $z=0$. This mass is significantly greater than the constant value used previously, and results in fewer halos crossing the mass threshold and
+
+\onecolumngrid
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{Plot_10.jpeg}
+\caption{Left: Comoving number density of quasars plotted as a function of redshift. Produced using the initial model from section 4 (blue), the model with short quasar lifetimes (orange), the model where halos form quasars at a constant virial velocity (green), and the model where halos form quasars once star formation-driven outflows are no longer buoyant (red). All have been calculated using Equation (8), except for in the short lifetime model, which uses Equation (16). Right: Comoving quasar UV emissivity plotted as a function of redshift. Lines are coloured as on the left, where all have been calculated from the number densities on the left using Equation (15), except for in the short lifetime model, which uses Equation (17).The purple line shows the emissivity calculated from $\epsilon_{912}$ using Equation (13).}
+\label{fig:10}
+\end{figure}
+\clearpage
+\twocolumngrid
+
+
+\noindent forming quasars, which leads to the reduced magnitude of the emissivity. In section 6, the number densities of quasars will be compared with estimates by \cite{Hopkins}, and it will be shown that this model, as well as the short lifetime model in section 5.1, produce quasar number densities that are at least 1 order of magnitude lower than the estimates of \citeauthor{Hopkins}.
 
 \subsubsection{Star Formation-Driven Outflows}
 
@@ -373,31 +388,29 @@ In \cite{Quasar}, the buoyancy of outflows of gas from the galaxy driven by star
     \Delta_z\equiv(\Omega_m(1+z)^3+\Omega_\Lambda)^{\frac{1}{3}}
 \end{equation}
 
-\noindent Above this critical halo mass, the outflows are trapped by the corona. Gas then builds up in the central regions of the galaxy, allowing
+\noindent Above this critical halo mass, the outflows are trapped by the corona. Gas then builds up in the central regions of the galaxy, allowing the SMBH to begin growing rapidly. As in the previous case, this leads to a critical halo mass which decreases with redshift.\par
+
+Comparison of the plots in Fig.10 shows that, for $M_0=10^{12.4}M_\odot$, this model produces a similarly good fit for the evolution of $\varepsilon_{UV,HM}$ between redshifts 2 and 6 to the initial model, and produces quasar number densities and UV emissivities which are much closer to the constant $M_{H,crit}$ case than the model where virial velocity is kept constant. Additionally, this model produces very similar quasar number densities and emissivities to the short quasar lifetime model described in section 5.1.
+
+ The results shown so far have been produced using assumed values for $M_{H,crit}$, $M_{BH,final}$, $\eta_{UV}$, and $k$ (the proportionality constant in Equation (7)) which are simple estimates. In the next section, we will investigate the effect of varying the values of $M_{H,crit}$ and $k$ on the resulting emissivity, and determine values for $\zeta=\eta_{UV}M_{BH,final}$ which produce a good fit for the magnitude of the emissivity calculated from $\epsilon_{912}$.
+
+ \section{Investigating the Effects of Changing Parameters}
+ \subsection{Varying $k$ and $M_{H,crit}$}
+
+In Fig.11, we investigate the effect of varying $M_{H,crit}$ and $k$ on the resulting emissivity, where larger values of $k$ correspond to longer quasar lifetimes and vice versa. On the left hand side, it can be seen that increasing $M_{H,crit}$ results in lower UV emissivity, as a higher critical halo mass means fewer halos will cross the mass threshold, so fewer halos will host quasars. The peak emissivity is also shifted to lower redshift for larger values of $M_{H,crit}$. On the right hand side, increasing the value of $k$ can be seen to have a similar effect to increasing $M_{H,crit}$, decreasing the emissivity and shifting the peak to lower redshift. This is believed to be because, in our model, the total energy emitted by each quasar during its lifetime is always assumed to be the same, so the increasing lifetimes of quasars leads to their average luminosity being lower. This has the effect of decreasing the quasar emissivity, which cancels out the increase to emissivity due to the number density of quasars being greater for longer quasar lifetimes. It can also be seen that, for small $(<)$
 
 \onecolumngrid
 
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=\linewidth]{Plot_10.jpeg}
-\caption{Left: Comoving number density of quasars plotted as a function of redshift. Produced using the initial model from section 4 (blue), the model with short quasar lifetimes (orange), the model where halos form quasars at a constant virial velocity (green), and the model where halos form quasars once star formation-driven outflows are no longer buoyant (red). All have been calculated using Equation (8), except for in the short lifetime model, which uses Equation (16). Right: Comoving quasar UV emissivity plotted as a function of redshift. Lines are coloured as on the left, where all have been calculated from the number densities on the left using Equation (15), except for in the short lifetime model, which uses Equation (17).The purple line shows the emissivity calculated from $\epsilon_{912}$ using Equation (13).}
-\label{fig:10}
-\end{figure}
-\clearpage
+ \begin{figure}[H]
+     \centering
+     \includegraphics[width=\linewidth]{Plot_9.jpeg}
+     \caption{Left: Comoving quasar UV emissivity plotted as a function of redshift, using the initial model described in section 4, for different values of $M_{H,crit}$. Greater values of $M_{H,crit}$ result in emissivities which peak at lower redshifts and have smaller magnitudes. Right: Comoving quasar UV emissivity plotted as a function of redshift, as on the left, for different values of the proportionality constant, $k$, in Equation (7). As for $M_{H,crit}$, Greater values of $k$ result in emissivities which peak at lower redshifts and have smaller magnitudes, but for small $k$, the effect of changing $k$ on the resulting emissivity is negligible.}
+     \label{fig:11}
+ \end{figure}
+
 \twocolumngrid
 
-
-\noindent the SMBH to begin growing rapidly. As in the previous case, this leads to a critical halo mass which decreases with redshift.\par
-
-Comparison of the plots in Fig.10 shows that, for $M_0=10^{12.4}M_\odot$, this model produces a similarly good fit for the evolution of $\varepsilon_{UV,HM}$ between redshifts 2 and 6 to the initial model, and produces quasar number densities and UV emissivities which are much closer to the constant $M_{H,crit}$ case than the model where virial velocity is kept constant. Additionally, this model produces very similar quasar number densities and emissivities to the short quasar lifetime model described in section 5.1.
-
- %The results shown so far have been produced using assumed values for $M{H,crit}$, $M_{BH,final}$, $\eta_{UV}$, and $k$ (the proportionality constant in Equation (7)) which are simple estimates. In the next section, we will investigate the effect of varying the values of $M{H,crit}$ and $k$ on the resulting emissivity, and determine values for $\zeta=\eta_{UV}M_{BH,final}$ which produce a good fit for the emissivity calculated from \citeauthor{Haardt_Madau}.
-
- %\section{Investigating the Effects of Changing Parameters}
- %\subsection{Varying $k$ and $M_{H,crit}$}
-
- %Hi.
 
 %\section{Conclusions}
 
